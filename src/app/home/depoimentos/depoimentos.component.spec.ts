@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
 import { DepoimentosComponent } from './depoimentos.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('DepoimentosComponent', () => {
   let component: DepoimentosComponent;
@@ -10,6 +11,7 @@ describe('DepoimentosComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [DepoimentosComponent],
+      providers: [provideHttpClient()],
     });
     fixture = TestBed.createComponent(DepoimentosComponent);
     component = fixture.componentInstance;
