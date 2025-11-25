@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
+
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -6,7 +8,10 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PagamentoComponent } from './pagamento.component';
 import { PagamentoService } from './pagamento.service';
 import { By } from '@angular/platform-browser';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('PagamentoComponent', () => {
   let component: PagamentoComponent;
@@ -14,12 +19,15 @@ describe('PagamentoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [PagamentoComponent],
-    schemas: [NO_ERRORS_SCHEMA],
-    imports: [ReactiveFormsModule, FormsModule],
-    providers: [PagamentoService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-})
-    .compileComponents();
+      declarations: [PagamentoComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [ReactiveFormsModule, FormsModule],
+      providers: [
+        PagamentoService,
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PagamentoComponent);
     component = fixture.componentInstance;
@@ -30,7 +38,12 @@ describe('PagamentoComponent', () => {
   });
 
   it('deve atualizar a forma de pagamento ao mudar a seleção', () => {
-    const mockOption = { id: '2', value: 'PAYMENT', label: 'Cartão', img: { src: '../../assets/icones/mastercard-icon.svg', alt: 'Card logo' }};
+    const mockOption = {
+      id: '2',
+      value: 'PAYMENT',
+      label: 'Cartão',
+      img: { src: '../../assets/icones/mastercard-icon.svg', alt: 'Card logo' },
+    };
     component.onSelectionChange(mockOption);
     expect(component.formaPagamento).toEqual(mockOption);
   });
@@ -45,7 +58,7 @@ describe('PagamentoComponent', () => {
       nomeCartao: 'JOHN DOE',
       mesValidade: '12',
       anoValidade: '2030',
-      codigoSeguranca: '123'
+      codigoSeguranca: '123',
     });
 
     fixture.detectChanges();

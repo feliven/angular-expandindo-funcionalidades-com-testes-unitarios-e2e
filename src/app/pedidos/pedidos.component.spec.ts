@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { PedidosComponent } from './pedidos.component';
 import { PedidosService } from './pedidos.service';
@@ -9,7 +10,10 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('PedidosComponent', () => {
   let component: PedidosComponent;
@@ -25,7 +29,7 @@ describe('PedidosComponent', () => {
       origem: 'São Paulo',
       estadoOrigem: 'SP',
       adultos: 2,
-      valorFinal: 3500.00
+      valorFinal: 3500.0,
     },
     {
       destino: 'Salvador',
@@ -34,26 +38,24 @@ describe('PedidosComponent', () => {
       origem: 'Brasília',
       estadoOrigem: 'DF',
       adultos: 1,
-      valorFinal: 2000.00
-    }
+      valorFinal: 2000.0,
+    },
   ];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [PedidosComponent],
-    schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-    ],
-    imports: [MatDialogModule],
-    providers: [
+      declarations: [PedidosComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [MatDialogModule],
+      providers: [
         PedidosService,
         MensagemService,
         MatDialog,
         MatSnackBar,
         provideHttpClient(withInterceptorsFromDi()),
-        provideHttpClientTesting()
-    ]
-}).compileComponents();
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -71,14 +73,14 @@ describe('PedidosComponent', () => {
   });
 
   it('deve recuperar pedidos na inicialização', () => {
-    component.pedidos$?.subscribe(pedidos => {
+    component.pedidos$?.subscribe((pedidos) => {
       expect(pedidos).toEqual(pedidosMock);
     });
   });
 
   it('deve abrir o modal de cancelamento e remover pedido ao confirmar', () => {
     const dialogSpy = jest.spyOn(dialog, 'open').mockReturnValue({
-      afterClosed: () => of(pedidosMock[0].id)
+      afterClosed: () => of(pedidosMock[0].id),
     } as any);
 
     component.onCancelarPedido(pedidosMock[0].id);

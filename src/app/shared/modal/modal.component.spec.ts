@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { ModalComponent } from './modal.component';
 
@@ -8,7 +9,7 @@ describe('ModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalComponent]
+      declarations: [ModalComponent],
     });
     fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;

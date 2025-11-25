@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { PrecosComponent } from './precos.component';
 
@@ -8,7 +9,7 @@ describe('PrecosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PrecosComponent]
+      declarations: [PrecosComponent],
     });
     fixture = TestBed.createComponent(PrecosComponent);
     component = fixture.componentInstance;

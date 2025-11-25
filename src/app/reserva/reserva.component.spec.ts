@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { ReservaComponent } from './reserva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,15 +13,9 @@ describe('ReservaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReservaComponent ],
-      imports: [
-        FormsModule,
-        SharedModule,
-        ReactiveFormsModule
-      ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
+      declarations: [ReservaComponent],
+      imports: [FormsModule, SharedModule, ReactiveFormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
     fixture = TestBed.createComponent(ReservaComponent);
     component = fixture.componentInstance;
@@ -44,7 +39,9 @@ describe('ReservaComponent', () => {
   });
 
   it('deve desabilitar o botão de pagamento quando o formulário é inválido', () => {
-    const button = fixture.debugElement.query(By.css('.payment-button')).nativeElement;
+    const button = fixture.debugElement.query(
+      By.css('.payment-button')
+    ).nativeElement;
     expect(button.disabled).toBeTruthy();
   });
 
@@ -53,7 +50,9 @@ describe('ReservaComponent', () => {
     component.form.controls['acomodacaoRadioSelection'].setValue('ACOMODACAO');
     component.form.controls['carroRadioSelection'].setValue('CARRO');
     fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('.payment-button')).nativeElement;
+    const button = fixture.debugElement.query(
+      By.css('.payment-button')
+    ).nativeElement;
     expect(button.disabled).toBeFalsy();
   });
 });

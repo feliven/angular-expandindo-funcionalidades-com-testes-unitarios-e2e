@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { RadioButtonGroupComponent } from './radio-button-group.component';
 
@@ -8,7 +9,7 @@ describe('RadioButtonGroupComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RadioButtonGroupComponent]
+      imports: [RadioButtonGroupComponent],
     });
     fixture = TestBed.createComponent(RadioButtonGroupComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { ContainerComponent } from './container.component';
 
@@ -8,7 +9,7 @@ describe('ContainerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ContainerComponent]
+      declarations: [ContainerComponent],
     });
     fixture = TestBed.createComponent(ContainerComponent);
     component = fixture.componentInstance;

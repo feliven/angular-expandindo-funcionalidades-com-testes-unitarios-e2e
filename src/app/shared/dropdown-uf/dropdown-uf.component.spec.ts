@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { DropdownUfComponent } from './dropdown-uf.component';
 
@@ -8,7 +9,7 @@ describe('DropdownUfComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DropdownUfComponent]
+      declarations: [DropdownUfComponent],
     });
     fixture = TestBed.createComponent(DropdownUfComponent);
     component = fixture.componentInstance;

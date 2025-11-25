@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { BotaoControleComponent } from './botao-controle.component';
 
@@ -8,7 +9,7 @@ describe('BotaoControleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BotaoControleComponent]
+      declarations: [BotaoControleComponent],
     });
     fixture = TestBed.createComponent(BotaoControleComponent);
     component = fixture.componentInstance;

@@ -1,7 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { expect } from '@jest/globals';
 
 import { ModalCancelarPedidoComponent } from './modal-cancelar-pedido.component';
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 describe('ModalCancelarPedidoComponent', () => {
   let component: ModalCancelarPedidoComponent;
@@ -10,7 +15,7 @@ describe('ModalCancelarPedidoComponent', () => {
 
   beforeEach(async () => {
     dialogRefSpy = {
-      close: jest.fn()
+      close: jest.fn(),
     } as unknown as jest.Mocked<MatDialogRef<ModalCancelarPedidoComponent>>;
 
     await TestBed.configureTestingModule({
@@ -18,8 +23,8 @@ describe('ModalCancelarPedidoComponent', () => {
       declarations: [ModalCancelarPedidoComponent],
       providers: [
         { provide: MatDialogRef, useValue: dialogRefSpy },
-        { provide: MAT_DIALOG_DATA, useValue: { id: 1 } }
-      ]
+        { provide: MAT_DIALOG_DATA, useValue: { id: 1 } },
+      ],
     }).compileComponents();
   });
 
