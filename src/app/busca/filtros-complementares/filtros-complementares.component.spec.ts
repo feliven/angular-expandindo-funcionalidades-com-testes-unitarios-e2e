@@ -11,6 +11,7 @@ import { MatIcon } from '@angular/material/icon';
 import { LabelComponent } from './label/label.component';
 import { MatSlider } from '@angular/material/slider';
 import { MatCheckbox } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('FiltrosComplementaresComponent', () => {
   let component: FiltrosComplementaresComponent;
@@ -18,7 +19,7 @@ describe('FiltrosComplementaresComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatIcon, MatSlider, MatCheckbox],
+      imports: [ReactiveFormsModule, MatIcon, MatSlider, MatCheckbox],
       declarations: [
         FiltrosComplementaresComponent,
         ParadasComponent,

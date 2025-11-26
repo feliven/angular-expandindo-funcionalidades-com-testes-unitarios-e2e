@@ -18,6 +18,7 @@ import {
 } from '@angular/material/card';
 import { MatInput } from '@angular/material/input';
 import { BannerComponent } from '../../shared/banner/banner.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -26,6 +27,7 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatLabel,
         MatFormField,
         MatInput,

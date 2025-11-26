@@ -5,6 +5,7 @@ import { ModalComponent } from './modal.component';
 import { SeletorPassageiroComponent } from '../../shared/seletor-passageiro/seletor-passageiro.component';
 import { MatChipListbox, MatChipOption } from '@angular/material/chips';
 import { BotaoControleComponent } from '../../shared/botao-controle/botao-controle.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
@@ -12,7 +13,7 @@ describe('ModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatChipListbox, MatChipOption],
+      imports: [ReactiveFormsModule, MatChipListbox, MatChipOption],
       declarations: [
         ModalComponent,
         SeletorPassageiroComponent,

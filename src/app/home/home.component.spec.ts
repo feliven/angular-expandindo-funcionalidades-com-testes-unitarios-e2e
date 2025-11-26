@@ -24,6 +24,7 @@ import {
 } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -32,6 +33,7 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatButtonToggleGroup,
         MatButtonToggle,
         MatChip,

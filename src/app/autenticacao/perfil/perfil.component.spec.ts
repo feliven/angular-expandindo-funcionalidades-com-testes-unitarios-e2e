@@ -25,6 +25,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { DropdownUfComponent } from '../../shared/dropdown-uf/dropdown-uf.component';
 import { MatDivider } from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('PerfilComponent', () => {
   let component: PerfilComponent;
@@ -33,6 +34,7 @@ describe('PerfilComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatCard,
         MatCardTitle,
         MatCardContent,

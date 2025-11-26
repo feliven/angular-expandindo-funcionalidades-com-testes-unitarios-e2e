@@ -23,6 +23,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatIcon } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckbox } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('FormBaseComponent', () => {
   let component: FormBaseComponent;
@@ -31,6 +32,7 @@ describe('FormBaseComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatCard,
         MatCardTitle,
         MatCardContent,

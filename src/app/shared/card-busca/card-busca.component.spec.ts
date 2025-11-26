@@ -15,6 +15,7 @@ import { FormBuscaComponent } from '../../shared/form-busca/form-busca.component
 import { FiltrosComplementaresComponent } from '../../busca/filtros-complementares/filtros-complementares.component';
 import { CardComponent } from '../../shared/card/card.component';
 import { PassagemDestaqueComponent } from '../../busca/passagem-destaque/passagem-destaque.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('CardBuscaComponent', () => {
   let component: CardBuscaComponent;
@@ -22,7 +23,7 @@ describe('CardBuscaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatCard, MatCardContent, MatCardActions],
+      imports: [ReactiveFormsModule, MatCard, MatCardContent, MatCardActions],
       declarations: [
         CardBuscaComponent,
         BannerComponent,

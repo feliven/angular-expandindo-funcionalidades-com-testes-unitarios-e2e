@@ -26,6 +26,10 @@ import { ParadasComponent } from './filtros-complementares/paradas/paradas.compo
 import { CompanhiasComponent } from './filtros-complementares/companhias/companhias.component';
 import { PrecosComponent } from './filtros-complementares/precos/precos.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatAutocomplete } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LabelComponent } from './filtros-complementares/label/label.component';
+import { MatSlider } from '@angular/material/slider';
 
 describe('BuscaComponent', () => {
   let component: BuscaComponent;
@@ -34,6 +38,7 @@ describe('BuscaComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatButtonToggleGroup,
         MatButtonToggle,
         MatChip,
@@ -44,6 +49,8 @@ describe('BuscaComponent', () => {
         MatDatepickerToggle,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatAutocomplete,
+        MatSlider,
       ],
       declarations: [
         BuscaComponent,
@@ -57,6 +64,7 @@ describe('BuscaComponent', () => {
         ParadasComponent,
         CompanhiasComponent,
         PrecosComponent,
+        LabelComponent,
       ],
       providers: [provideHttpClient()],
     });

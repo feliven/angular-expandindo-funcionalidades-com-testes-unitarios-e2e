@@ -5,6 +5,7 @@ import { PrecosComponent } from './precos.component';
 import { provideHttpClient } from '@angular/common/http';
 import { LabelComponent } from '../label/label.component';
 import { MatSlider } from '@angular/material/slider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('PrecosComponent', () => {
   let component: PrecosComponent;
@@ -12,7 +13,7 @@ describe('PrecosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatSlider],
+      imports: [ReactiveFormsModule, MatSlider],
       declarations: [PrecosComponent, LabelComponent],
       providers: [provideHttpClient()],
     });

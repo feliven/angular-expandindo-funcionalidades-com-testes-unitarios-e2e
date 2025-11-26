@@ -19,6 +19,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { CardComponent } from '../../shared/card/card.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('FormBuscaComponent', () => {
   let component: FormBuscaComponent;
@@ -27,6 +28,7 @@ describe('FormBuscaComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatButtonToggle,
         MatDatepicker,
         MatDatepickerToggle,

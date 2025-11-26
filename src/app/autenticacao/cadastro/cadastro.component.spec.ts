@@ -24,6 +24,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatAutocomplete } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('CadastroComponent', () => {
   let component: CadastroComponent;
@@ -32,6 +33,7 @@ describe('CadastroComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
         MatCard,
         MatCardActions,
         MatError,
