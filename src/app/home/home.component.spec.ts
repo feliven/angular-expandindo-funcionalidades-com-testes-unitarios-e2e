@@ -23,6 +23,7 @@ import {
   MatDatepickerToggle,
 } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -41,6 +42,7 @@ describe('HomeComponent', () => {
         MatDatepicker,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatAutocomplete,
       ],
       declarations: [
         HomeComponent,

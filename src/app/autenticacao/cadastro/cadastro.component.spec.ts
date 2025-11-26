@@ -22,6 +22,8 @@ import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 import { DropdownUfComponent } from '../../shared/dropdown-uf/dropdown-uf.component';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatIcon } from '@angular/material/icon';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 describe('CadastroComponent', () => {
   let component: CadastroComponent;
@@ -36,6 +38,8 @@ describe('CadastroComponent', () => {
         MatCardTitle,
         MatCardContent,
         MatFormField,
+        MatAutocomplete,
+        MatIcon,
         MatLabel,
         MatDatepicker,
         MatDatepickerToggle,

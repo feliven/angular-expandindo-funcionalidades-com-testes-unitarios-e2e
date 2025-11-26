@@ -3,7 +3,7 @@ import { expect } from '@jest/globals';
 
 import { FormBaseComponent } from './form-base.component';
 import { DropdownUfComponent } from '../../shared/dropdown-uf/dropdown-uf.component';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import {
   MatDatepicker,
   MatDatepickerModule,
@@ -22,6 +22,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatIcon } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 describe('FormBaseComponent', () => {
   let component: FormBaseComponent;
@@ -44,6 +45,8 @@ describe('FormBaseComponent', () => {
         MatAutocomplete,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatError,
+        MatCheckbox,
       ],
       declarations: [
         FormBaseComponent,
