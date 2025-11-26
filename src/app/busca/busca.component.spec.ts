@@ -30,6 +30,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LabelComponent } from './filtros-complementares/label/label.component';
 import { MatSlider } from '@angular/material/slider';
+import { MatInput } from '@angular/material/input';
 
 describe('BuscaComponent', () => {
   let component: BuscaComponent;
@@ -51,6 +52,7 @@ describe('BuscaComponent', () => {
         MatNativeDateModule,
         MatAutocomplete,
         MatSlider,
+        MatInput,
       ],
       declarations: [
         BuscaComponent,

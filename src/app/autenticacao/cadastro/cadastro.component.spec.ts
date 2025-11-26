@@ -25,6 +25,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInput } from '@angular/material/input';
+import { MatSlider } from '@angular/material/slider';
 
 describe('CadastroComponent', () => {
   let component: CadastroComponent;
@@ -50,6 +52,8 @@ describe('CadastroComponent', () => {
         MatCheckbox,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatInput,
+        MatSlider,
       ],
       declarations: [
         CadastroComponent,

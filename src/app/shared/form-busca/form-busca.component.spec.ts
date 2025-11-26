@@ -20,6 +20,8 @@ import { CardComponent } from '../../shared/card/card.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInput } from '@angular/material/input';
+import { MatSlider } from '@angular/material/slider';
 
 describe('FormBuscaComponent', () => {
   let component: FormBuscaComponent;
@@ -40,6 +42,9 @@ describe('FormBuscaComponent', () => {
         MatDatepickerModule,
         MatNativeDateModule,
         MatAutocomplete,
+        MatInput,
+        MatAutocomplete,
+        MatSlider,
       ],
       declarations: [FormBuscaComponent, DropdownUfComponent, CardComponent],
       providers: [provideHttpClient()],

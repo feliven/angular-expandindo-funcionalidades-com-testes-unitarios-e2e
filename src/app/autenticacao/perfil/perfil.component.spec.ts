@@ -26,6 +26,8 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { DropdownUfComponent } from '../../shared/dropdown-uf/dropdown-uf.component';
 import { MatDivider } from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInput } from '@angular/material/input';
+import { MatSlider } from '@angular/material/slider';
 
 describe('PerfilComponent', () => {
   let component: PerfilComponent;
@@ -52,6 +54,8 @@ describe('PerfilComponent', () => {
         MatIcon,
         MatAutocomplete,
         MatCheckbox,
+        MatInput,
+        MatSlider,
       ],
       declarations: [
         PerfilComponent,

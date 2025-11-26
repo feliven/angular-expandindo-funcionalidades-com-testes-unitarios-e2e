@@ -25,6 +25,8 @@ import {
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInput } from '@angular/material/input';
+import { MatSlider } from '@angular/material/slider';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -45,6 +47,8 @@ describe('HomeComponent', () => {
         MatDatepickerModule,
         MatNativeDateModule,
         MatAutocomplete,
+        MatInput,
+        MatSlider,
       ],
       declarations: [
         HomeComponent,
