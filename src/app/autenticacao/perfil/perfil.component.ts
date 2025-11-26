@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CadastroService } from 'src/app/autenticacao/services/cadastro.service';
-import { FormularioService } from 'src/app/core/services/formulario.service';
-import { TokenService } from 'src/app/autenticacao/services/token.service';
-import { UserService } from 'src/app/autenticacao/services/user.service';
-import { PessoaUsuaria } from 'src/app/core/types/type';
+import { CadastroService } from '../../autenticacao/services/cadastro.service';
+import { FormularioService } from '../../core/services/formulario.service';
+import { TokenService } from '../../autenticacao/services/token.service';
+import { UserService } from '../../autenticacao/services/user.service';
+import { PessoaUsuaria } from '../../core/types/type';
 
 @Component({
-    selector: 'app-perfil',
-    templateUrl: './perfil.component.html',
-    styleUrls: ['./perfil.component.scss'],
-    standalone: false
+  selector: 'app-perfil',
+  templateUrl: './perfil.component.html',
+  styleUrls: ['./perfil.component.scss'],
+  standalone: false,
 })
-export class PerfilComponent implements OnInit{
+export class PerfilComponent implements OnInit {
   titulo = 'Olá, ';
   textoBotao = 'ATUALIZAR';
   perfilComponent = true;
@@ -29,11 +29,11 @@ export class PerfilComponent implements OnInit{
     private formularioService: FormularioService,
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.token = this.tokenService.retornarToken();
-    this.cadastroService.buscarCadastro().subscribe(cadastro => {
+    this.cadastroService.buscarCadastro().subscribe((cadastro) => {
       this.cadastro = cadastro;
       this.nome = cadastro.nome;
       this.carregarFormulario();
@@ -65,7 +65,7 @@ export class PerfilComponent implements OnInit{
       senha: this.form?.value.senha,
       genero: this.form?.value.genero,
       cidade: this.form?.value.cidade,
-      estado: this.form?.value.estado
+      estado: this.form?.value.estado,
     };
 
     this.cadastroService.editarCadastro(dadosAtualizados).subscribe({
@@ -75,7 +75,7 @@ export class PerfilComponent implements OnInit{
       },
       error: (err) => {
         console.log(err);
-      }
+      },
     });
   }
 

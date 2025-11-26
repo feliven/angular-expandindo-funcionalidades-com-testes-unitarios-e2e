@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { DepoimentoService } from 'src/app/home/services/depoimento.service';
-import { Depoimento } from 'src/app/core/types/type';
+import { DepoimentoService } from '../../home/services/depoimento.service';
+import { Depoimento } from '../../core/types/type';
 
 @Component({
-    selector: 'app-depoimentos',
-    templateUrl: './depoimentos.component.html',
-    styleUrls: ['./depoimentos.component.scss'],
-    standalone: false
+  selector: 'app-depoimentos',
+  templateUrl: './depoimentos.component.html',
+  styleUrls: ['./depoimentos.component.scss'],
+  standalone: false,
 })
 export class DepoimentosComponent implements OnInit {
   depoimentos: Depoimento[] = [];
-  constructor(private service: DepoimentoService) {
-  }
+  constructor(private service: DepoimentoService) {}
   ngOnInit(): void {
-    this.service.listar().subscribe(
-      res => {
-        this.depoimentos = res;
-      }
-    );
+    this.service.listar().subscribe((res) => {
+      this.depoimentos = res;
+    });
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Passagem } from 'src/app/core/types/type';
+import { Passagem } from '../../core/types/type';
 
 @Component({
   selector: 'app-passagem',

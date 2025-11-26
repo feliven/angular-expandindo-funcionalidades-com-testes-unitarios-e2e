@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
 import { PassagemComponent } from './passagem.component';
-import { Passagem } from 'src/app/core/types/type';
+import { Passagem } from '../../core/types/type';
 
 describe('PassagemComponent', () => {
   let component: PassagemComponent;

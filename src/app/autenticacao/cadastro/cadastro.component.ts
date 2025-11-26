@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CadastroService } from 'src/app/autenticacao/services/cadastro.service';
-import { FormularioService } from 'src/app/core/services/formulario.service';
-import { PessoaUsuaria } from 'src/app/core/types/type';
+import { CadastroService } from '../../autenticacao/services/cadastro.service';
+import { FormularioService } from '../../core/services/formulario.service';
+import { PessoaUsuaria } from '../../core/types/type';
 
 @Component({
-    selector: 'app-cadastro',
-    templateUrl: './cadastro.component.html',
-    styleUrls: ['./cadastro.component.scss'],
-    standalone: false
+  selector: 'app-cadastro',
+  templateUrl: './cadastro.component.html',
+  styleUrls: ['./cadastro.component.scss'],
+  standalone: false,
 })
 export class CadastroComponent {
   constructor(
     private formularioService: FormularioService,
     private cadastroService: CadastroService,
     private router: Router
-  ) { }
+  ) {}
 
   cadastrar() {
     const formCadastro = this.formularioService.getCadastro();
@@ -30,7 +30,7 @@ export class CadastroComponent {
         },
         error: (err) => {
           console.log('Erro ao realizar cadastro', err);
-        }
+        },
       });
     }
   }

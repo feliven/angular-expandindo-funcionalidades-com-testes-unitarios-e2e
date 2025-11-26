@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatChipSelectionChange } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { ModalComponent } from '../../shared/modal/modal.component';
 import { DadosBusca, UnidadeFederativa } from '../../core/types/type';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FormBuscaService {
-
   formBusca: FormGroup;
 
   constructor(private dialog: MatDialog) {
@@ -20,7 +19,7 @@ export class FormBuscaService {
       somenteIda,
       origem: new FormControl(null, [Validators.required]),
       destino: new FormControl(null, [Validators.required]),
-      tipo: new FormControl("Econômica"),
+      tipo: new FormControl('Econômica'),
       adultos: new FormControl(1),
       criancas: new FormControl(0),
       bebes: new FormControl(0),
@@ -31,11 +30,11 @@ export class FormBuscaService {
       precoMin: new FormControl(null),
       precoMax: new FormControl(null),
     });
-    somenteIda.valueChanges.subscribe(somenteIda => {
-      if(somenteIda){
+    somenteIda.valueChanges.subscribe((somenteIda) => {
+      if (somenteIda) {
         dataVolta.disable();
         dataVolta.setValidators(null);
-      }else{
+      } else {
         dataVolta.enable();
         dataVolta.setValidators([Validators.required]);
       }
@@ -43,7 +42,7 @@ export class FormBuscaService {
     });
   }
 
-  getDescricaoPassageiros (): string {
+  getDescricaoPassageiros(): string {
     let descricao = '';
 
     const adultos = this.formBusca.get('adultos')?.value;
@@ -53,12 +52,16 @@ export class FormBuscaService {
 
     const criancas = this.formBusca.get('criancas')?.value;
     if (criancas && criancas > 0) {
-      descricao += `${descricao ? ', ' : ''}${criancas} criança${criancas > 1 ? 's' : ''}`;
+      descricao += `${descricao ? ', ' : ''}${criancas} criança${
+        criancas > 1 ? 's' : ''
+      }`;
     }
 
     const bebes = this.formBusca.get('bebes')?.value;
     if (bebes && bebes > 0) {
-      descricao += `${descricao ? ', ' : ''}${bebes} bebê${bebes > 1 ? 's' : ''}`;
+      descricao += `${descricao ? ', ' : ''}${bebes} bebê${
+        bebes > 1 ? 's' : ''
+      }`;
     }
 
     return descricao;
@@ -70,7 +73,7 @@ export class FormBuscaService {
 
     this.formBusca.patchValue({
       origem: destino,
-      destino: origem
+      destino: origem,
     });
   }
 
@@ -101,25 +104,25 @@ export class FormBuscaService {
       dadosBusca.dataVolta = dataVoltaControl.value.toISOString();
     }
     const conexoesControl = this.obterControle<number>('conexoes');
-    if(conexoesControl.value){
+    if (conexoesControl.value) {
       dadosBusca.conexoes = conexoesControl.value;
     }
     const companhiasControl = this.obterControle<number[]>('companhias');
-    if(companhiasControl.value){
+    if (companhiasControl.value) {
       dadosBusca.companhiasId = companhiasControl.value;
     }
     const precoMinControl = this.obterControle<number>('precoMin');
-    if(precoMinControl.value){
+    if (precoMinControl.value) {
       dadosBusca.precoMin = precoMinControl.value;
     }
     const precoMaxControl = this.obterControle<number>('precoMin');
-    if(precoMaxControl.value){
+    if (precoMaxControl.value) {
       dadosBusca.precoMax = precoMaxControl.value;
     }
     return dadosBusca;
   }
 
-  alterarTipo (evento: MatChipSelectionChange, tipo: string) {
+  alterarTipo(evento: MatChipSelectionChange, tipo: string) {
     if (evento.selected) {
       this.formBusca.patchValue({
         tipo,
@@ -130,11 +133,11 @@ export class FormBuscaService {
 
   openDialog() {
     this.dialog.open(ModalComponent, {
-      width: '50%'
+      width: '50%',
     });
   }
 
-  get formEstaValido(){
+  get formEstaValido() {
     return this.formBusca.valid;
   }
 }

@@ -1,9 +1,17 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { expect } from '@jest/globals';
+
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { PagamentoService } from './pagamento.service';
 import { QrCode } from '../core/types/type';
-import { environment } from 'src/environments/environment';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('PagamentoService', () => {
   let service: PagamentoService;
@@ -11,9 +19,13 @@ describe('PagamentoService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [],
-    providers: [PagamentoService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-});
+      imports: [],
+      providers: [
+        PagamentoService,
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
+    });
 
     service = TestBed.inject(PagamentoService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -27,10 +39,10 @@ describe('PagamentoService', () => {
     it('deve retornar um Observable<QrCode>', () => {
       const dummyQrCode: QrCode = {
         codigo: 'algum-codigo-qr-string',
-        imagem: 'qrcode.png'
+        imagem: 'qrcode.png',
       };
 
-      service.getQrCode().subscribe(qrCode => {
+      service.getQrCode().subscribe((qrCode) => {
         expect(qrCode).toEqual(dummyQrCode);
       });
 

@@ -1,22 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/autenticacao/services/user.service';
+import { UserService } from '../../autenticacao/services/user.service';
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
-    standalone: false
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
+  standalone: false,
 })
 export class HeaderComponent {
-
   showMenu = false;
   isMobile = false;
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) {
+  constructor(private userService: UserService, private router: Router) {
     this.checkIfMobile();
     window.onresize = () => this.checkIfMobile();
   }

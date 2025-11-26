@@ -1,19 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { PessoaUsuaria } from '../../core/types/type';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CadastroService {
-
   private apiUrl: string = environment.apiUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   cadastrar(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
-    return this.http.post<PessoaUsuaria>(`${this.apiUrl}/auth/cadastro`, pessoaUsuaria);
+    return this.http.post<PessoaUsuaria>(
+      `${this.apiUrl}/auth/cadastro`,
+      pessoaUsuaria
+    );
   }
 
   buscarCadastro(): Observable<PessoaUsuaria> {
@@ -21,7 +23,9 @@ export class CadastroService {
   }
 
   editarCadastro(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
-    return this.http.patch<PessoaUsuaria>(`${this.apiUrl}/auth/perfil`, pessoaUsuaria);
+    return this.http.patch<PessoaUsuaria>(
+      `${this.apiUrl}/auth/perfil`,
+      pessoaUsuaria
+    );
   }
-
 }

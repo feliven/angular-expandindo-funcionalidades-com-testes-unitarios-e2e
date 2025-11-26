@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
-import { FormBuscaService } from 'src/app/shared/services/form-busca.service';
-import { PassagensService } from 'src/app/busca/services/passagens.service';
-import { DadosBusca, Destaques, Passagem } from 'src/app/core/types/type';
+import { FormBuscaService } from '../shared/services/form-busca.service';
+import { PassagensService } from '../busca/services/passagens.service';
+import { DadosBusca, Destaques, Passagem } from '../core/types/type';
 
 @Component({
-    selector: 'app-busca',
-    templateUrl: './busca.component.html',
-    styleUrls: ['./busca.component.scss'],
-    standalone: false
+  selector: 'app-busca',
+  templateUrl: './busca.component.html',
+  styleUrls: ['./busca.component.scss'],
+  standalone: false,
 })
 export class BuscaComponent implements OnInit {
   passagens: Passagem[] = [];
@@ -17,7 +17,7 @@ export class BuscaComponent implements OnInit {
   constructor(
     private passagensService: PassagensService,
     private formBuscaService: FormBuscaService
-  ) { }
+  ) {}
   ngOnInit(): void {
     const buscaPadrao: DadosBusca = {
       dataIda: new Date().toISOString(),
@@ -25,30 +25,32 @@ export class BuscaComponent implements OnInit {
       porPagina: 25,
       somenteIda: false,
       passageirosAdultos: 1,
-      tipo: "Executiva"
+      tipo: 'Executiva',
     };
-    const busca = this.formBuscaService.formEstaValido ? this.formBuscaService.obterDadosBusca() : buscaPadrao;
-    this.passagensService.getPassagens(busca)
-    .pipe(take(1))
-    .subscribe(
-      res => {
+    const busca = this.formBuscaService.formEstaValido
+      ? this.formBuscaService.obterDadosBusca()
+      : buscaPadrao;
+    this.passagensService
+      .getPassagens(busca)
+      .pipe(take(1))
+      .subscribe((res) => {
         this.passagens = res.resultado;
         this.formBuscaService.formBusca.patchValue({
           precoMin: res.precoMin,
           precoMax: res.precoMax,
         });
         this.obterDestaques();
-      }
-    );
-  }
-  busca(ev: DadosBusca) {
-    this.passagensService.getPassagens(ev).subscribe(
-      res => {
-        console.log(res);
-        this.passagens = res.resultado;
       });
   }
-  obterDestaques(){
-    this.destaques = this.passagensService.obterPassagensDestaques(this.passagens);
+  busca(ev: DadosBusca) {
+    this.passagensService.getPassagens(ev).subscribe((res) => {
+      console.log(res);
+      this.passagens = res.resultado;
+    });
+  }
+  obterDestaques() {
+    this.destaques = this.passagensService.obterPassagensDestaques(
+      this.passagens
+    );
   }
 }

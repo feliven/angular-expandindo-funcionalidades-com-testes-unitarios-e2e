@@ -1,16 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuscaService } from 'src/app/shared/services/form-busca.service';
+import { FormBuscaService } from '../../shared/services/form-busca.service';
 
 @Component({
-    selector: 'app-form-busca',
-    templateUrl: './form-busca.component.html',
-    styleUrls: ['./form-busca.component.scss'],
-    standalone: false
+  selector: 'app-form-busca',
+  templateUrl: './form-busca.component.html',
+  styleUrls: ['./form-busca.component.scss'],
+  standalone: false,
 })
 export class FormBuscaComponent {
   @Output() realizarBusca = new EventEmitter();
-  constructor(
-    public formBuscaService: FormBuscaService) { }
+  constructor(public formBuscaService: FormBuscaService) {}
 
   buscar() {
     if (this.formBuscaService.formEstaValido) {

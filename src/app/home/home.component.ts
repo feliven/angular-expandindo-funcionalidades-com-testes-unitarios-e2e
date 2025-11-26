@@ -2,28 +2,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PromocaoService } from 'src/app/home/services/promocao.service';
+import { PromocaoService } from '../home/services/promocao.service';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    standalone: false
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
   constructor(
     private servicoPromocao: PromocaoService,
     private router: Router
-  ) {
-
-  }
+  ) {}
   ngOnInit(): void {
-    this.servicoPromocao.listar()
-      .subscribe(
-        resposta => {
-          console.log(resposta);
-        }
-      );
+    this.servicoPromocao.listar().subscribe((resposta) => {
+      console.log(resposta);
+    });
   }
   navegarParaBusca(ev: any) {
     this.router.navigate(['busca']);

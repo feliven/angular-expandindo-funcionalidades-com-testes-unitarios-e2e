@@ -4,17 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { ErroRoutingModule } from './erro-routing.module';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    PaginaNaoEncontradaComponent
-  ],
-  imports: [
-    CommonModule,
-    ErroRoutingModule,
-    SharedModule,
-    RouterModule
-  ]
+  declarations: [PaginaNaoEncontradaComponent],
+  imports: [CommonModule, ErroRoutingModule, SharedModule, RouterModule],
 })
-export class ErroModule { }
+export class ErroModule {}
