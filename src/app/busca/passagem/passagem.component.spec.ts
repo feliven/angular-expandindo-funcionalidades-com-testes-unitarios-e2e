@@ -3,6 +3,8 @@ import { expect } from '@jest/globals';
 
 import { PassagemComponent } from './passagem.component';
 import { Passagem } from '../../core/types/type';
+import { MatLabel } from '@angular/material/form-field';
+import { MatCard, MatCardContent } from '@angular/material/card';
 
 describe('PassagemComponent', () => {
   let component: PassagemComponent;
@@ -33,6 +35,7 @@ describe('PassagemComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [MatLabel, MatCard, MatCardContent],
       declarations: [PassagemComponent],
     });
     fixture = TestBed.createComponent(PassagemComponent);
@@ -60,7 +63,7 @@ describe('PassagemComponent', () => {
   it('should display passagem data correctly', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.ida-volta').textContent.trim()).toBe(
-      'Ida e volta',
+      'Ida e volta'
     );
   });
 });

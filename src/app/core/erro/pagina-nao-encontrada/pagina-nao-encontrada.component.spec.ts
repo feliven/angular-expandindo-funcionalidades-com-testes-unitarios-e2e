@@ -4,6 +4,8 @@ import { expect } from '@jest/globals';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { BannerComponent } from '../../../shared/banner/banner.component';
+import { ContainerComponent } from '../../../shared/container/container.component';
 
 describe('PaginaNaoEncontradaComponent', () => {
   let component: PaginaNaoEncontradaComponent;
@@ -11,7 +13,11 @@ describe('PaginaNaoEncontradaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PaginaNaoEncontradaComponent],
+      declarations: [
+        PaginaNaoEncontradaComponent,
+        BannerComponent,
+        ContainerComponent,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PaginaNaoEncontradaComponent);
@@ -41,14 +47,14 @@ describe('PaginaNaoEncontradaComponent', () => {
 
   it('deveria carregar app-banner 2 vezes', () => {
     const banners: DebugElement[] = fixture.debugElement.queryAll(
-      By.css('app-banner'),
+      By.css('app-banner')
     );
     expect(banners.length).toBe(2);
   });
 
   it('deveria carregar app-container 1 vez', () => {
     const container: DebugElement = fixture.debugElement.query(
-      By.css('app-container'),
+      By.css('app-container')
     );
     expect(container).toBeTruthy();
   });
@@ -61,7 +67,7 @@ describe('PaginaNaoEncontradaComponent', () => {
   it('should load paragraph with text Página não encontrada', () => {
     const paragrafo: DebugElement = fixture.debugElement.query(By.css('p'));
     expect(paragrafo.nativeElement.textContent).toContain(
-      'Página não encontrada',
+      'Página não encontrada'
     );
   });
 

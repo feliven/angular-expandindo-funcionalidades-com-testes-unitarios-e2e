@@ -3,6 +3,8 @@ import { expect } from '@jest/globals';
 
 import { ConclusaoReservaComponent } from './conclusao-reserva.component';
 import { By } from '@angular/platform-browser';
+import { BannerComponent } from '../shared/banner/banner.component';
+import { ContainerComponent } from '../shared/container/container.component';
 
 describe('ConclusaoReservaComponent', () => {
   let component: ConclusaoReservaComponent;
@@ -10,7 +12,11 @@ describe('ConclusaoReservaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ConclusaoReservaComponent],
+      declarations: [
+        ConclusaoReservaComponent,
+        BannerComponent,
+        ContainerComponent,
+      ],
     });
     fixture = TestBed.createComponent(ConclusaoReservaComponent);
     component = fixture.componentInstance;
@@ -24,7 +30,7 @@ describe('ConclusaoReservaComponent', () => {
   it('deve exibir o banner de conclusão', () => {
     const banner = fixture.debugElement.query(By.css('app-banner'));
     expect(banner.attributes['src']).toEqual(
-      'assets/imagens/banner-conclusão.png',
+      'assets/imagens/banner-conclusão.png'
     );
     expect(banner.attributes['alt']).toEqual('Banner conclusão');
   });
@@ -36,7 +42,7 @@ describe('ConclusaoReservaComponent', () => {
       .nativeElement.textContent;
     expect(title).toContain('Reserva concluída com sucesso.');
     expect(message).toContain(
-      'Uhuuuul, prepare suas malas pois a compra foi confirmada e o seu próximo destino já está programado!',
+      'Uhuuuul, prepare suas malas pois a compra foi confirmada e o seu próximo destino já está programado!'
     );
   });
 

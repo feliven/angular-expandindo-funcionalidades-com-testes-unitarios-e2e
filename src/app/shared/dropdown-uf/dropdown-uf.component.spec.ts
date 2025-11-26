@@ -7,6 +7,8 @@ import { of } from 'rxjs';
 import { UnidadeFederativaService } from '../../core/services/unidade-federativa.service';
 import { UnidadeFederativa } from '../../core/types/type';
 import { MatAutocomplete } from '@angular/material/autocomplete';
+import { MatIcon } from '@angular/material/icon';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
 
 describe('DropdownUfComponent', () => {
   let component: DropdownUfComponent;
@@ -22,7 +24,14 @@ describe('DropdownUfComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [DropdownUfComponent],
-      imports: [ReactiveFormsModule, MatAutocomplete],
+      imports: [
+        ReactiveFormsModule,
+        MatAutocomplete,
+        MatIcon,
+        MatFormField,
+        MatIcon,
+        MatLabel,
+      ],
       providers: [
         provideHttpClient(),
         {
@@ -155,11 +164,65 @@ describe('DropdownUfComponent', () => {
     unidadeFederativaService.listar.mockReturnValue(of(mockData));
     component.ngOnInit();
 
-    component.control.setValue('Rio');
+    let emissionCount = 0;
     component.filteredOptions$?.subscribe((options) => {
-      expect(options).toEqual([{ id: 2, nome: 'Rio de Janeiro', sigla: 'RJ' }]);
-      done();
+      emissionCount++;
+      if (emissionCount === 2) {
+        // Skip first emission (startWith), check second
+        expect(options).toEqual([
+          { id: 2, nome: 'Rio de Janeiro', sigla: 'RJ' },
+        ]);
+        done();
+      }
     });
+
+    setTimeout(() => component.control.setValue('Rio'), 0);
+  });
+
+  it('should emit filtered results on subsequent value changes', (done) => {
+    const mockData = [
+      { id: 1, nome: 'São Paulo', sigla: 'SP' },
+      { id: 2, nome: 'Santa Catarina', sigla: 'SC' },
+    ];
+    unidadeFederativaService.listar.mockReturnValue(of(mockData));
+    component.ngOnInit();
+
+    let emissionCount = 0;
+    component.filteredOptions$?.subscribe((options) => {
+      emissionCount++;
+      if (emissionCount === 2) {
+        expect(options.length).toBe(1);
+        expect(options[0].nome).toBe('Santa Catarina');
+        done();
+      }
+    });
+
+    setTimeout(() => component.control.setValue('Sa'), 0);
+  });
+
+  it('should handle rapid consecutive value changes', (done) => {
+    const mockData = [
+      { id: 1, nome: 'São Paulo', sigla: 'SP' },
+      { id: 2, nome: 'Rio de Janeiro', sigla: 'RJ' },
+    ];
+    unidadeFederativaService.listar.mockReturnValue(of(mockData));
+    component.ngOnInit();
+
+    let lastEmission: UnidadeFederativa[] = [];
+    component.filteredOptions$?.subscribe((options) => {
+      lastEmission = options;
+    });
+
+    setTimeout(() => {
+      component.control.setValue('São');
+      component.control.setValue('Rio');
+      setTimeout(() => {
+        expect(lastEmission).toEqual([
+          { id: 2, nome: 'Rio de Janeiro', sigla: 'RJ' },
+        ]);
+        done();
+      }, 10);
+    }, 0);
   });
 
   it('should return all options when control value is empty', (done) => {

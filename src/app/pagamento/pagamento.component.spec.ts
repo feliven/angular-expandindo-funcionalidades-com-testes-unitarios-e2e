@@ -12,6 +12,8 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { BannerComponent } from '../shared/banner/banner.component';
+import { FormBaseComponent } from '../shared/form-base/form-base.component';
 
 describe('PagamentoComponent', () => {
   let component: PagamentoComponent;
@@ -19,7 +21,7 @@ describe('PagamentoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PagamentoComponent],
+      declarations: [PagamentoComponent, BannerComponent, FormBaseComponent],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [ReactiveFormsModule, FormsModule],
       providers: [

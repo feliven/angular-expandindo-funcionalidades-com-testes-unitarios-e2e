@@ -5,7 +5,11 @@ import { ReservaComponent } from './reserva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
+import { LabelComponent } from '../busca/filtros-complementares/label/label.component';
+import { MatSlider } from '@angular/material/slider';
+import { BannerComponent } from '../shared/banner/banner.component';
+import { FormBaseComponent } from '../shared/form-base/form-base.component';
 
 describe('ReservaComponent', () => {
   let component: ReservaComponent;
@@ -13,8 +17,13 @@ describe('ReservaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ReservaComponent],
-      imports: [FormsModule, SharedModule, ReactiveFormsModule],
+      declarations: [
+        ReservaComponent,
+        LabelComponent,
+        BannerComponent,
+        FormBaseComponent,
+      ],
+      imports: [FormsModule, SharedModule, ReactiveFormsModule, MatSlider],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
     fixture = TestBed.createComponent(ReservaComponent);
@@ -40,7 +49,7 @@ describe('ReservaComponent', () => {
 
   it('deve desabilitar o botão de pagamento quando o formulário é inválido', () => {
     const button = fixture.debugElement.query(
-      By.css('.payment-button'),
+      By.css('.payment-button')
     ).nativeElement;
     expect(button.disabled).toBeTruthy();
   });
@@ -51,7 +60,7 @@ describe('ReservaComponent', () => {
     component.form.controls['carroRadioSelection'].setValue('CARRO');
     fixture.detectChanges();
     const button = fixture.debugElement.query(
-      By.css('.payment-button'),
+      By.css('.payment-button')
     ).nativeElement;
     expect(button.disabled).toBeFalsy();
   });

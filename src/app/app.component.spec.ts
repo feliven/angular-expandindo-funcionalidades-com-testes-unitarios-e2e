@@ -3,6 +3,7 @@ import { expect } from '@jest/globals';
 import { AppComponent } from './app.component';
 import { Component } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
 
 @Component({ selector: 'app-header', template: '', standalone: false })
 class MockHeaderComponent {}

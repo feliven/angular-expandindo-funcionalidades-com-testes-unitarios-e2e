@@ -4,6 +4,17 @@ import { expect } from '@jest/globals';
 import { CardBuscaComponent } from './card-busca.component';
 import { Router } from '@angular/router';
 import { Promocao } from '../../core/types/type';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+} from '@angular/material/card';
+import { BannerComponent } from '../../shared/banner/banner.component';
+import { ContainerComponent } from '../../shared/container/container.component';
+import { FormBuscaComponent } from '../../shared/form-busca/form-busca.component';
+import { FiltrosComplementaresComponent } from '../../busca/filtros-complementares/filtros-complementares.component';
+import { CardComponent } from '../../shared/card/card.component';
+import { PassagemDestaqueComponent } from '../../busca/passagem-destaque/passagem-destaque.component';
 
 describe('CardBuscaComponent', () => {
   let component: CardBuscaComponent;
@@ -11,7 +22,16 @@ describe('CardBuscaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CardBuscaComponent],
+      imports: [MatCard, MatCardContent, MatCardActions],
+      declarations: [
+        CardBuscaComponent,
+        BannerComponent,
+        ContainerComponent,
+        FormBuscaComponent,
+        FiltrosComplementaresComponent,
+        CardComponent,
+        PassagemDestaqueComponent,
+      ],
       providers: [{ provide: Router, useValue: { navigate: jest.fn() } }],
     });
     fixture = TestBed.createComponent(CardBuscaComponent);

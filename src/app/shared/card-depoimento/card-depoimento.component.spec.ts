@@ -3,6 +3,10 @@ import { expect } from '@jest/globals';
 import { CardDepoimentoComponent } from './card-depoimento.component';
 import { Depoimento } from '../../core/types/type';
 import { MatCardModule } from '@angular/material/card';
+import {
+  MatFormField,
+  MatFormFieldControl,
+} from '@angular/material/form-field';
 
 describe('CardDepoimentoComponent', () => {
   let component: CardDepoimentoComponent;
@@ -19,7 +23,7 @@ describe('CardDepoimentoComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CardDepoimentoComponent],
-      imports: [MatCardModule],
+      imports: [MatCardModule, MatFormField, MatFormFieldControl],
     });
     fixture = TestBed.createComponent(CardDepoimentoComponent);
     component = fixture.componentInstance;

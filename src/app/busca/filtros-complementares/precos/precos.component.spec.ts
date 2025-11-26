@@ -3,6 +3,8 @@ import { expect } from '@jest/globals';
 
 import { PrecosComponent } from './precos.component';
 import { provideHttpClient } from '@angular/common/http';
+import { LabelComponent } from '../label/label.component';
+import { MatSlider } from '@angular/material/slider';
 
 describe('PrecosComponent', () => {
   let component: PrecosComponent;
@@ -10,7 +12,8 @@ describe('PrecosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PrecosComponent],
+      imports: [MatSlider],
+      declarations: [PrecosComponent, LabelComponent],
       providers: [provideHttpClient()],
     });
     fixture = TestBed.createComponent(PrecosComponent);

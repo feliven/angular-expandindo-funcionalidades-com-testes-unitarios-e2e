@@ -3,6 +3,7 @@ import { expect } from '@jest/globals';
 
 import { CompanhiasComponent } from './companhias.component';
 import { provideHttpClient } from '@angular/common/http';
+import { LabelComponent } from '../label/label.component';
 
 describe('CompanhiasComponent', () => {
   let component: CompanhiasComponent;
@@ -10,7 +11,7 @@ describe('CompanhiasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CompanhiasComponent],
+      declarations: [CompanhiasComponent, LabelComponent],
       providers: [provideHttpClient()],
     });
     fixture = TestBed.createComponent(CompanhiasComponent);

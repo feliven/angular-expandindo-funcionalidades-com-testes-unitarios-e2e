@@ -2,6 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
 import { BotaoControleComponent } from './botao-controle.component';
+import { LabelComponent } from '../../busca/filtros-complementares/label/label.component';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+} from '@angular/material/card';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 describe('BotaoControleComponent', () => {
   let component: BotaoControleComponent;
@@ -9,7 +16,8 @@ describe('BotaoControleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BotaoControleComponent],
+      imports: [MatCard, MatCardContent, MatCardActions, MatAutocomplete],
+      declarations: [BotaoControleComponent, LabelComponent],
     });
     fixture = TestBed.createComponent(BotaoControleComponent);
     component = fixture.componentInstance;

@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
 import { HeaderComponent } from './header.component';
+import { MatToolbar } from '@angular/material/toolbar';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -9,6 +10,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [MatToolbar],
       declarations: [HeaderComponent],
     });
     fixture = TestBed.createComponent(HeaderComponent);

@@ -3,6 +3,21 @@ import { expect } from '@jest/globals';
 
 import { LoginComponent } from './login.component';
 import { provideHttpClient } from '@angular/common/http';
+import {
+  MatError,
+  MatFormField,
+  MatFormFieldControl,
+  MatLabel,
+} from '@angular/material/form-field';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardTitle,
+} from '@angular/material/card';
+import { MatInput } from '@angular/material/input';
+import { BannerComponent } from '../../shared/banner/banner.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -10,7 +25,19 @@ describe('LoginComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginComponent],
+      imports: [
+        MatLabel,
+        MatFormField,
+        MatInput,
+        MatFormFieldControl,
+        MatCardActions,
+        MatError,
+        MatCard,
+        MatCardHeader,
+        MatCardTitle,
+        MatCardContent,
+      ],
+      declarations: [LoginComponent, BannerComponent],
       providers: [provideHttpClient()],
     });
     fixture = TestBed.createComponent(LoginComponent);
