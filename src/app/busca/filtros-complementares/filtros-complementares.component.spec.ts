@@ -9,7 +9,11 @@ import { PrecosComponent } from './precos/precos.component';
 import { CardComponent } from '../../shared/card/card.component';
 import { MatIcon } from '@angular/material/icon';
 import { LabelComponent } from './label/label.component';
-import { MatSlider } from '@angular/material/slider';
+import {
+  MatSlider,
+  MatSliderRangeThumb,
+  MatSliderThumb,
+} from '@angular/material/slider';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -19,7 +23,14 @@ describe('FiltrosComplementaresComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, MatIcon, MatSlider, MatCheckbox],
+      imports: [
+        ReactiveFormsModule,
+        MatIcon,
+        MatSlider,
+        MatSliderThumb,
+        MatSliderRangeThumb,
+        MatCheckbox,
+      ],
       declarations: [
         FiltrosComplementaresComponent,
         ParadasComponent,

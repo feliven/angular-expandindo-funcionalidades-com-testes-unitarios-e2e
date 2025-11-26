@@ -29,7 +29,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LabelComponent } from './filtros-complementares/label/label.component';
-import { MatSlider } from '@angular/material/slider';
+import {
+  MatSlider,
+  MatSliderRangeThumb,
+  MatSliderThumb,
+  MatSliderVisualThumb,
+} from '@angular/material/slider';
 import { MatInput } from '@angular/material/input';
 
 describe('BuscaComponent', () => {
@@ -53,6 +58,8 @@ describe('BuscaComponent', () => {
         MatAutocomplete,
         MatSlider,
         MatInput,
+        MatSliderThumb,
+        MatSliderRangeThumb,
       ],
       declarations: [
         BuscaComponent,
