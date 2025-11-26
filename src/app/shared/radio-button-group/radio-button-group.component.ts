@@ -1,22 +1,30 @@
-import { Component, EventEmitter, forwardRef, Input, OnChanges, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RadioOption } from 'src/app/core/types/type';
 
-
 @Component({
-    selector: 'app-radio-button-group',
-    templateUrl: './radio-button-group.component.html',
-    styleUrls: ['./radio-button-group.component.scss'],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => RadioButtonGroupComponent),
-            multi: true
-        }
-    ],
-    standalone: false
+  selector: 'app-radio-button-group',
+  templateUrl: './radio-button-group.component.html',
+  styleUrls: ['./radio-button-group.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => RadioButtonGroupComponent),
+      multi: true,
+    },
+  ],
+  standalone: false,
 })
-export class RadioButtonGroupComponent implements ControlValueAccessor, OnChanges {
+export class RadioButtonGroupComponent
+  implements ControlValueAccessor, OnChanges
+{
   @Input() options: RadioOption[] = [];
 
   @Input() defaultValue!: RadioOption;
@@ -26,8 +34,8 @@ export class RadioButtonGroupComponent implements ControlValueAccessor, OnChange
   @Output() selectionChange = new EventEmitter<RadioOption>();
 
   radioOption!: RadioOption;
-  onChange!: (value: RadioOption)=> void;
-  onTouched!: ()=> void;
+  onChange!: (value: RadioOption) => void;
+  onTouched!: () => void;
   disabled = false;
 
   ngOnChanges(): void {
@@ -40,11 +48,11 @@ export class RadioButtonGroupComponent implements ControlValueAccessor, OnChange
     this.radioOption = value;
   }
 
-  registerOnChange(fn: (value: RadioOption)=> void): void {
+  registerOnChange(fn: (value: RadioOption) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: ()=> void): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
