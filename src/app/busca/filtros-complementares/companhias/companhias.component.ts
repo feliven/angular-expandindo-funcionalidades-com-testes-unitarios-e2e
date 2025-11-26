@@ -18,7 +18,7 @@ export class CompanhiasComponent implements OnInit {
 
   constructor(
     private companhiaService: CompanhiaService,
-    private formBuscaService: FormBuscaService
+    private formBuscaService: FormBuscaService,
   ) {
     this.companhiasControl = this.formBuscaService.obterControle<
       number[] | null

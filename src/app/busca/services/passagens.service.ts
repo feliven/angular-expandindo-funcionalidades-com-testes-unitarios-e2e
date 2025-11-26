@@ -20,7 +20,7 @@ export class PassagensService {
   getPassagens(search: DadosBusca): Observable<Resultado> {
     const params = this.converterParametroParaString(search);
     const obs = this.httpClient.get<Resultado>(
-      this.apiUrl + '/passagem/search?' + params
+      this.apiUrl + '/passagem/search?' + params,
     );
     obs.pipe(take(1)).subscribe((res) => {
       this.precoMin = res.precoMin;
@@ -45,7 +45,7 @@ export class PassagensService {
       return undefined;
     }
     const ordenadoPorTempo = [...passagem].sort(
-      (a, b) => a.tempoVoo - b.tempoVoo
+      (a, b) => a.tempoVoo - b.tempoVoo,
     );
     const ordenadoPorPreco = [...passagem].sort((a, b) => a.total - b.total);
 

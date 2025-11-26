@@ -11,7 +11,6 @@ $soft-gray: #f6f6f6;
 $gray: #49454f;
 $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
 
-
 .payment-container {
   display: flex;
   flex-direction: column;
@@ -37,7 +36,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
 
   .payment-title {
     color: $primary-color;
-    font: 400 36px/122% Roboto, sans-serif;
+    font:
+      400 36px/122% Roboto,
+      sans-serif;
   }
 
   .back-nav {
@@ -55,7 +56,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
   .back-link {
     cursor: pointer;
     color: $primary-color;
-    font: 500 16px/150% Roboto, sans-serif;
+    font:
+      500 16px/150% Roboto,
+      sans-serif;
     text-decoration: none;
 
     &:hover {
@@ -65,7 +68,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
 
   .payment-instruction {
     color: $grey-text;
-    font: 400 28px/129% Roboto, sans-serif;
+    font:
+      400 28px/129% Roboto,
+      sans-serif;
     margin-top: 32px;
   }
 
@@ -99,7 +104,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
   .payment-method {
     color: $grey-text;
     text-align: center;
-    font: 400 24px/133% Roboto, sans-serif;
+    font:
+      400 24px/133% Roboto,
+      sans-serif;
     margin-top: 4px;
   }
 
@@ -134,22 +141,30 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
     }
 
     .pix-icon {
-      font: 32px/100% 'Material Icons', sans-serif;
+      font:
+        32px/100% "Material Icons",
+        sans-serif;
     }
 
     .pix-title {
       margin: 0;
-      font: 28px/129% Roboto, sans-serif;
+      font:
+        28px/129% Roboto,
+        sans-serif;
       flex: 1;
     }
 
     .pix-discount {
-      font: 16px/150% Roboto, sans-serif;
+      font:
+        16px/150% Roboto,
+        sans-serif;
     }
 
     .pix-instruction {
       color: $grey-text;
-      font: 400 16px/24px Roboto, sans-serif;
+      font:
+        400 16px/24px Roboto,
+        sans-serif;
       margin-top: 32px;
     }
 
@@ -184,12 +199,16 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
     }
 
     .pix-code-label {
-      font: 500 16px/24px Roboto, sans-serif;
+      font:
+        500 16px/24px Roboto,
+        sans-serif;
       color: $grey-text;
     }
 
     .pix-code {
-      font: 400 16px/24px Roboto, sans-serif;
+      font:
+        400 16px/24px Roboto,
+        sans-serif;
       color: $grey-text;
       margin-top: 10px;
       word-wrap: break-word;
@@ -202,7 +221,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
       border-radius: 100px;
       color: #1d192b;
       cursor: pointer;
-      font: 500 14px/143% Roboto, sans-serif;
+      font:
+        500 14px/143% Roboto,
+        sans-serif;
       margin-top: 10px;
       padding: 10px 24px;
 
@@ -230,14 +251,18 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
     }
 
     .trip-details {
-      font: 400 16px/24px Roboto, sans-serif;
+      font:
+        400 16px/24px Roboto,
+        sans-serif;
       color: $grey-text;
       margin-top: 24px;
     }
 
     .passenger-count {
       color: $grey-text;
-      font: 400 16px/150% Roboto, sans-serif;
+      font:
+        400 16px/150% Roboto,
+        sans-serif;
       margin-top: 16px;
     }
 
@@ -249,13 +274,17 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
     .total-label {
       color: $primary-color;
       text-align: center;
-      font: 24px/133% Roboto, sans-serif;
+      font:
+        24px/133% Roboto,
+        sans-serif;
     }
 
     .total-amount {
       color: $grey-text;
       text-align: center;
-      font: 32px Roboto, sans-serif;
+      font:
+        32px Roboto,
+        sans-serif;
       margin-top: 16px;
     }
 
@@ -263,7 +292,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
       margin-top: 24px;
       padding: 10px 51px;
       text-align: center;
-      font: 500 14px/143% Roboto, sans-serif;
+      font:
+        500 14px/143% Roboto,
+        sans-serif;
       border-radius: 100px;
       border: none;
       background-color: $primary-color;
@@ -278,12 +309,16 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
     .important-info {
       width: 100%;
       margin-top: 40px;
-      font: 400 16px/24px Roboto, sans-serif;
+      font:
+        400 16px/24px Roboto,
+        sans-serif;
       color: $grey-text;
     }
 
     .info-title {
-      font: 500 16px/150% Roboto, sans-serif;
+      font:
+        500 16px/150% Roboto,
+        sans-serif;
     }
 
     .info-details {
@@ -293,7 +328,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
     .payment-options {
       width: 100%;
       margin-top: 64px;
-      font: 500 16px/150% Roboto, sans-serif;
+      font:
+        500 16px/150% Roboto,
+        sans-serif;
       color: $grey-text;
 
       @media (max-width: 991px) {
@@ -330,13 +367,20 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
 
       .material-icon {
         margin: auto 0;
-        font: 32px/1 'Material Icons', -apple-system, Roboto, Helvetica, sans-serif;
+        font:
+          32px/1 "Material Icons",
+          -apple-system,
+          Roboto,
+          Helvetica,
+          sans-serif;
       }
 
       .form-title {
         flex: 1;
         margin: 0;
-        font: 28px/1.29 Roboto, sans-serif;
+        font:
+          28px/1.29 Roboto,
+          sans-serif;
       }
     }
 
@@ -367,7 +411,9 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
         border-radius: 100px;
         background-color: $light-primary;
         color: $light-on-primary;
-        font: 500 14px/1.43 Roboto, sans-serif;
+        font:
+          500 14px/1.43 Roboto,
+          sans-serif;
         text-align: center;
         padding: 10px 24px;
         margin: 48px auto 0;
@@ -404,5 +450,4 @@ $on-surface-variant: var(--M3-sys-light-on-surface-variant, #49454f);
       }
     }
   }
-
 }

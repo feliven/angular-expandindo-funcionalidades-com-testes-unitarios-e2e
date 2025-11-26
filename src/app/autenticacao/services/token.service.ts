@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 const KEY = 'token';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
   salvarToken(token: string) {
@@ -17,10 +17,8 @@ export class TokenService {
   retornarToken() {
     return localStorage.getItem(KEY) ?? '';
   }
-  
+
   possuiToken() {
     return !!this.retornarToken();
   }
 }
-
-

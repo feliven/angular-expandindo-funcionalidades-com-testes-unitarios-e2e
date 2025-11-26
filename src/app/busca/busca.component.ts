@@ -16,7 +16,7 @@ export class BuscaComponent implements OnInit {
 
   constructor(
     private passagensService: PassagensService,
-    private formBuscaService: FormBuscaService
+    private formBuscaService: FormBuscaService,
   ) {}
   ngOnInit(): void {
     const buscaPadrao: DadosBusca = {
@@ -50,7 +50,7 @@ export class BuscaComponent implements OnInit {
   }
   obterDestaques() {
     this.destaques = this.passagensService.obterPassagensDestaques(
-      this.passagens
+      this.passagens,
     );
   }
 }

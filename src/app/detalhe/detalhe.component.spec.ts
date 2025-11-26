@@ -38,24 +38,24 @@ describe('DetalheComponent', () => {
   it('deve exibir o título principal correto', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h1.main-title').textContent).toContain(
-      'Atravesse o deserto no Chile'
+      'Atravesse o deserto no Chile',
     );
   });
 
   it('deve exibir a data correta da viagem', () => {
     const compiled = fixture.nativeElement;
     expect(
-      compiled.querySelector('.travel-info-content p').textContent
+      compiled.querySelector('.travel-info-content p').textContent,
     ).toContain('23/09/2025');
   });
 
   it('deve ter botões de reservar e comprar', () => {
     const compiled = fixture.nativeElement;
     expect(
-      compiled.querySelector('button.reserve-button').textContent
+      compiled.querySelector('button.reserve-button').textContent,
     ).toContain('Quero reservar agora!');
     expect(compiled.querySelector('button.buy-button').textContent).toContain(
-      'Quero comprar agora!'
+      'Quero comprar agora!',
     );
   });
 });

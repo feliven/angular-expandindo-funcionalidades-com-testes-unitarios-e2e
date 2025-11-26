@@ -25,34 +25,34 @@
           <div class="grupo">
             <mat-label>Ida</mat-label>
             <p class="box">
-              {{ passagem.dataIda | date : "dd/MM" }}
+              {{ passagem.dataIda | date: "dd/MM" }}
             </p>
           </div>
           <div class="grupo" *ngIf="passagem.dataVolta">
             <mat-label>Volta</mat-label>
             <p class="box">
-              {{ passagem.dataVolta | date : "dd/MM" }}
+              {{ passagem.dataVolta | date: "dd/MM" }}
             </p>
           </div>
         </div>
       </div>
       <div class="orcamento">
         <div class="preco">
-          {{ passagem.total | currency : "BRL" }}
+          {{ passagem.total | currency: "BRL" }}
         </div>
         <div class="detalhes">
           <ul *ngFor="let orcamento of passagem.orcamento">
             <li>
               <p>{{ orcamento.descricao }}</p>
-              <p>{{ orcamento.preco | currency : "BRL" }}</p>
+              <p>{{ orcamento.preco | currency: "BRL" }}</p>
             </li>
             <li>
               <p>Taxa de embarque</p>
-              <p>{{ orcamento.taxaEmbarque | currency : "BRL" }}</p>
+              <p>{{ orcamento.taxaEmbarque | currency: "BRL" }}</p>
             </li>
             <li class="total">
               <p>Total</p>
-              <p>{{ orcamento.total | currency : "BRL" }}</p>
+              <p>{{ orcamento.total | currency: "BRL" }}</p>
             </li>
           </ul>
         </div>

@@ -18,14 +18,14 @@
 
   .links-toolbar {
     display: flex;
-    flex-direction: column;  // Ensure vertical layout for mobile
+    flex-direction: column; // Ensure vertical layout for mobile
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background-color: black;
     padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 
     @media (min-width: 769px) {
@@ -45,9 +45,10 @@
       margin-left: 20px;
     }
 
-    button, a {
-      width: 100%;  // Full width for vertical alignment
-      text-align: left;  // Align text to the left
+    button,
+    a {
+      width: 100%; // Full width for vertical alignment
+      text-align: left; // Align text to the left
     }
 
     img {

@@ -35,7 +35,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDividerModule,
     MatCheckboxModule,
     MatSliderModule,
-    MatSnackBarModule
-  ]
+    MatSnackBarModule,
+  ],
 })
-export class MaterialModule { }
+export class MaterialModule {}

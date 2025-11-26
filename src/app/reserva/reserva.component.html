@@ -1,15 +1,20 @@
 <app-banner
   src="assets/imagens/banner-detalhes.png"
-  alt="Banner da tela de detalhe">
+  alt="Banner da tela de detalhe"
+>
 </app-banner>
-
 
 <app-container>
   <div class="page-container">
     <header class="header">
       <h1 class="summary-title">Resumo da Viagem</h1>
       <div class="back-link-container">
-        <img loading="lazy" src="../../assets/icones/back-icon.svg" class="back-icon" alt="Back icon" />
+        <img
+          loading="lazy"
+          src="../../assets/icones/back-icon.svg"
+          class="back-icon"
+          alt="Back icon"
+        />
         <a appBackButton class="back-link">Voltar a Detalhes</a>
       </div>
     </header>
@@ -46,7 +51,10 @@
               </div>
             </div>
             <p class="options-prompt">Selecione uma das opções:</p>
-            <app-radio-button-group formControlName="vooRadioSelection" [options]="vooRadioOptions"></app-radio-button-group>
+            <app-radio-button-group
+              formControlName="vooRadioSelection"
+              [options]="vooRadioOptions"
+            ></app-radio-button-group>
           </article>
           <article class="trip-section">
             <div class="section-header">
@@ -61,7 +69,10 @@
             </div>
             <div class="separator"></div>
             <p class="options-prompt">Selecione uma das opções:</p>
-            <app-radio-button-group formControlName="acomodacaoRadioSelection" [options]="acomodacaoRadioOptions"></app-radio-button-group>
+            <app-radio-button-group
+              formControlName="acomodacaoRadioSelection"
+              [options]="acomodacaoRadioOptions"
+            ></app-radio-button-group>
           </article>
           <article class="trip-section">
             <div class="section-header">
@@ -76,12 +87,20 @@
             </div>
             <div class="separator"></div>
             <p class="options-prompt">Selecione uma das opções:</p>
-            <app-radio-button-group formControlName="carroRadioSelection" [options]="carroRadioOptions"></app-radio-button-group>
+            <app-radio-button-group
+              formControlName="carroRadioSelection"
+              [options]="carroRadioOptions"
+            ></app-radio-button-group>
           </article>
         </section>
         <aside class="summary">
           <div class="summary-box">
-            <img loading="lazy" src="../../assets/imagens/desert.png" class="summary-image" alt="Trip summary" />
+            <img
+              loading="lazy"
+              src="../../assets/imagens/desert.png"
+              class="summary-image"
+              alt="Trip summary"
+            />
             <div class="trip-summary">
               <p><strong>Data de ida:</strong> 23/09/2025</p>
               <p><strong>Data de volta:</strong> 30/09/2025</p>
@@ -92,7 +111,13 @@
             <div class="separator"></div>
             <p class="final-cost-title">Valor final</p>
             <p class="final-cost">R$ 3769</p>
-            <button class="payment-button" [disabled]="form.invalid" (click)="onPagamentoClick()">Avançar para o pagamento</button>
+            <button
+              class="payment-button"
+              [disabled]="form.invalid"
+              (click)="onPagamentoClick()"
+            >
+              Avançar para o pagamento
+            </button>
           </div>
         </aside>
       </main>
@@ -104,8 +129,10 @@
       <h2 class="info-title">Informações importantes</h2>
       <p class="info-details">
         Os serviços no resumo ainda não estão reservados. <br />
-        A compra só será concluída após a confirmação de disponibilidade e de pagamento <br />
-        Preços estão em Real (R$) convertido ao câmbio do dia, sujeito à alteração.
+        A compra só será concluída após a confirmação de disponibilidade e de
+        pagamento <br />
+        Preços estão em Real (R$) convertido ao câmbio do dia, sujeito à
+        alteração.
       </p>
     </section>
 
@@ -113,10 +140,26 @@
       <h2 class="payment-title">Formas de pagamento</h2>
       <div class="payment-options-container">
         <div class="payment-logos">
-          <img loading="lazy" src="../../assets/icones/boleto-icon.svg" alt="Boleto payment logo" />
-          <img loading="lazy" src="../../assets/icones/visa-icon.svg" alt="Visa payment logo" />
-          <img loading="lazy" src="../../assets/icones/pix-icon.svg" alt="Pix payment logo" />
-          <img loading="lazy" src="../../assets/icones/mastercard-icon.svg" alt="Another payment logo" />
+          <img
+            loading="lazy"
+            src="../../assets/icones/boleto-icon.svg"
+            alt="Boleto payment logo"
+          />
+          <img
+            loading="lazy"
+            src="../../assets/icones/visa-icon.svg"
+            alt="Visa payment logo"
+          />
+          <img
+            loading="lazy"
+            src="../../assets/icones/pix-icon.svg"
+            alt="Pix payment logo"
+          />
+          <img
+            loading="lazy"
+            src="../../assets/icones/mastercard-icon.svg"
+            alt="Another payment logo"
+          />
         </div>
         <p class="payment-discount">
           10% de desconto à vista no pix, 5% no boleto ou em até 12x no cartão.
@@ -124,5 +167,4 @@
       </div>
     </section>
   </div>
-
 </app-container>

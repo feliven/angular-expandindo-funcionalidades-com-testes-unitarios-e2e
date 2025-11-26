@@ -11,50 +11,54 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule)
+    loadChildren: () =>
+      import('./autenticacao/autenticacao.module').then(
+        (m) => m.AutenticacaoModule,
+      ),
   },
   {
     path: 'busca',
-    loadChildren: () => import('./busca/busca.module').then(m => m.BuscaModule)
+    loadChildren: () =>
+      import('./busca/busca.module').then((m) => m.BuscaModule),
   },
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'busca',
-    component: BuscaComponent
+    component: BuscaComponent,
   },
   {
     path: 'detalhe',
-    component: DetalheComponent
+    component: DetalheComponent,
   },
   {
     path: 'reserva',
-    component: ReservaComponent
+    component: ReservaComponent,
   },
   {
     path: 'pagamento',
-    component: PagamentoComponent
+    component: PagamentoComponent,
   },
   {
     path: 'conclusao-reserva',
-    component: ConclusaoReservaComponent
+    component: ConclusaoReservaComponent,
   },
   {
     path: 'pedidos',
-    component: PedidosComponent
+    component: PedidosComponent,
   },
   {
     path: '**',
     redirectTo: '/pagina-nao-encontrada',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

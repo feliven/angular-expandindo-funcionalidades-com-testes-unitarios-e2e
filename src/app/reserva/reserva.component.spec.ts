@@ -40,7 +40,7 @@ describe('ReservaComponent', () => {
 
   it('deve desabilitar o botão de pagamento quando o formulário é inválido', () => {
     const button = fixture.debugElement.query(
-      By.css('.payment-button')
+      By.css('.payment-button'),
     ).nativeElement;
     expect(button.disabled).toBeTruthy();
   });
@@ -51,7 +51,7 @@ describe('ReservaComponent', () => {
     component.form.controls['carroRadioSelection'].setValue('CARRO');
     fixture.detectChanges();
     const button = fixture.debugElement.query(
-      By.css('.payment-button')
+      By.css('.payment-button'),
     ).nativeElement;
     expect(button.disabled).toBeFalsy();
   });

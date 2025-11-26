@@ -19,7 +19,7 @@ export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup;
   estadoControl = new FormControl<UnidadeFederativa | null>(
     null,
-    Validators.required
+    Validators.required,
   );
 
   @Input() perfilComponent = false;
@@ -30,7 +30,7 @@ export class FormBaseComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private formularioService: FormularioService
+    private formularioService: FormularioService,
   ) {}
 
   ngOnInit() {

@@ -28,7 +28,7 @@ export class PerfilComponent implements OnInit {
     private tokenService: TokenService,
     private formularioService: FormularioService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit() {

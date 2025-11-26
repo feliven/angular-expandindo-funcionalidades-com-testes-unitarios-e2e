@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { MensagemService } from '../services/mensagem.service';
@@ -10,7 +16,7 @@ export class ErrosInterceptor implements HttpInterceptor {
 
   intercept(
     request: HttpRequest<HttpErrorResponse>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<HttpErrorResponse>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -40,7 +46,7 @@ export class ErrosInterceptor implements HttpInterceptor {
         // Lançar o erro novamente para que o componente que fez a chamada também possa tratá-lo
         //return throwError(errorMessage);
         return throwError(() => new Error('Ops, ocorreu um erro'));
-      })
+      }),
     );
   }
 }

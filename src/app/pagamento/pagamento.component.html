@@ -1,6 +1,7 @@
 <app-banner
   src="assets/imagens/banner-carrinho.png"
-  alt="Banner da tela de detalhe">
+  alt="Banner da tela de detalhe"
+>
 </app-banner>
 
 <app-container>
@@ -8,14 +9,24 @@
     <header class="payment-header">
       <h1 class="payment-title">Pagamento</h1>
       <nav class="back-nav">
-        <img src="../../assets/icones/back-icon.svg" alt="Back arrow" class="back-icon" />
+        <img
+          src="../../assets/icones/back-icon.svg"
+          alt="Back arrow"
+          class="back-icon"
+        />
         <a appBackButton class="back-link">Voltar para reserva</a>
       </nav>
     </header>
-    <p class="payment-instruction">Escola sua forma de pagamento para finalizar sua compra:</p>
+    <p class="payment-instruction">
+      Escola sua forma de pagamento para finalizar sua compra:
+    </p>
     <section class="payment-options">
       <app-radio-button-group
-        [flexDirection]="'row'" [options]="pagamentoRadioOptions" [defaultValue]="formaPagamento" (selectionChange)="onSelectionChange($event)">
+        [flexDirection]="'row'"
+        [options]="pagamentoRadioOptions"
+        [defaultValue]="formaPagamento"
+        (selectionChange)="onSelectionChange($event)"
+      >
       </app-radio-button-group>
     </section>
 
@@ -27,7 +38,8 @@
           <p class="pix-discount">10% de desconto</p>
         </header>
         <p class="pix-instruction">
-          Para fazer o pagamento do pedido escaneie o QRCode ou copie o código Pix em seu aplicativo de pagamento.
+          Para fazer o pagamento do pedido escaneie o QRCode ou copie o código
+          Pix em seu aplicativo de pagamento.
         </p>
         <div class="pix-content">
           <ng-container *ngIf="qrCode$ | async as qrCode">
@@ -50,16 +62,28 @@
           <div class="form-row">
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Número do cartão</mat-label>
-              <input matInput formControlName="numeroCartao" placeholder="Número do cartão">
-              <mat-error *ngIf="form.get('numeroCartao')?.errors">Número do cartão é obrigatório</mat-error>
+              <input
+                matInput
+                formControlName="numeroCartao"
+                placeholder="Número do cartão"
+              />
+              <mat-error *ngIf="form.get('numeroCartao')?.errors"
+                >Número do cartão é obrigatório</mat-error
+              >
             </mat-form-field>
           </div>
 
           <div class="form-row">
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Nome Impresso no cartão</mat-label>
-              <input matInput formControlName="nomeCartao" placeholder="Nome Impresso no cartão">
-              <mat-error *ngIf="form.get('nomeCartao')?.errors">Nome Impresso no cartão é obrigatório</mat-error>
+              <input
+                matInput
+                formControlName="nomeCartao"
+                placeholder="Nome Impresso no cartão"
+              />
+              <mat-error *ngIf="form.get('nomeCartao')?.errors"
+                >Nome Impresso no cartão é obrigatório</mat-error
+              >
             </mat-form-field>
           </div>
 
@@ -67,37 +91,64 @@
             <div class="form-group half-width">
               <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Mês</mat-label>
-                <input matInput formControlName="mesValidade" placeholder="Mês">
-                <mat-error *ngIf="form.get('mesValidade')?.errors">Mês de vencimento é obrigatório</mat-error>
+                <input
+                  matInput
+                  formControlName="mesValidade"
+                  placeholder="Mês"
+                />
+                <mat-error *ngIf="form.get('mesValidade')?.errors"
+                  >Mês de vencimento é obrigatório</mat-error
+                >
               </mat-form-field>
             </div>
 
             <div class="form-group half-width">
               <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Ano</mat-label>
-                <input matInput formControlName="anoValidade" placeholder="Ano">
-                <mat-error *ngIf="form.get('anoValidade')?.errors">Ano de vencimento é obrigatório</mat-error>
+                <input
+                  matInput
+                  formControlName="anoValidade"
+                  placeholder="Ano"
+                />
+                <mat-error *ngIf="form.get('anoValidade')?.errors"
+                  >Ano de vencimento é obrigatório</mat-error
+                >
               </mat-form-field>
             </div>
 
             <div class="form-group half-width">
               <mat-form-field appearance="outline" class="full-width">
                 <mat-label>CVC</mat-label>
-                <input matInput formControlName="codigoSeguranca" placeholder="Cod. Segurança">
-                <mat-error *ngIf="form.get('codigoSeguranca')?.errors">Código de segurança é obrigatório</mat-error>
+                <input
+                  matInput
+                  formControlName="codigoSeguranca"
+                  placeholder="Cod. Segurança"
+                />
+                <mat-error *ngIf="form.get('codigoSeguranca')?.errors"
+                  >Código de segurança é obrigatório</mat-error
+                >
               </mat-form-field>
             </div>
           </div>
 
           <div class="d-flex">
-            <button type="submit" class="submit-button" [disabled]="form.invalid">Concluir pagamento</button>
+            <button
+              type="submit"
+              class="submit-button"
+              [disabled]="form.invalid"
+            >
+              Concluir pagamento
+            </button>
           </div>
         </form>
       </section>
 
-
       <aside class="order-summary">
-        <img src="../../assets/imagens/desert.png" alt="Trip illustration" class="trip-image" />
+        <img
+          src="../../assets/imagens/desert.png"
+          alt="Trip illustration"
+          class="trip-image"
+        />
         <div class="trip-details">
           <p><strong>Data de ida:</strong> 23/09/2025</p>
           <p><strong>Data de volta:</strong> 30/09/2025</p>

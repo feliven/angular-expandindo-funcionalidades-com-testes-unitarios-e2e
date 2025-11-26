@@ -7,12 +7,8 @@ import { PagamentoService } from './pagamento.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-
-
 @NgModule({
-  declarations: [
-    PagamentoComponent
-  ],
+  declarations: [PagamentoComponent],
   imports: [
     ReactiveFormsModule,
     SharedModule,
@@ -20,8 +16,6 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
   ],
-  providers: [
-    PagamentoService
-  ]
+  providers: [PagamentoService],
 })
-export class PagamentoModule { }
+export class PagamentoModule {}

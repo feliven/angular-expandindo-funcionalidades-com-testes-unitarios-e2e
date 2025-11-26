@@ -2,7 +2,7 @@ $primary-color: var(--Primaria, #6750a4);
 $gray: var(--Cinza, #49454f);
 $light-gray: var(--Cinza-soft, #f6f6f6);
 $surface-color: var(--Superficie1, #f7f2fa);
-$font-roboto: 'Roboto', sans-serif;
+$font-roboto: "Roboto", sans-serif;
 
 .page-container {
   display: flex;
@@ -88,7 +88,12 @@ $font-roboto: 'Roboto', sans-serif;
         white-space: nowrap;
 
         .material-icons {
-          font: 32px/100% 'Material Icons', -apple-system, $font-roboto, Helvetica, sans-serif;
+          font:
+            32px/100% "Material Icons",
+            -apple-system,
+            $font-roboto,
+            Helvetica,
+            sans-serif;
         }
 
         .section-title {
@@ -123,7 +128,7 @@ $font-roboto: 'Roboto', sans-serif;
       .separator {
         margin-top: 16px;
         height: 1px;
-        background-color: #6750A4;
+        background-color: #6750a4;
       }
 
       .options-prompt {
@@ -186,7 +191,7 @@ $font-roboto: 'Roboto', sans-serif;
       .separator {
         margin-top: 16px;
         height: 1px;
-        background-color: #6750A4;
+        background-color: #6750a4;
       }
 
       .trip-summary {

@@ -14,7 +14,7 @@ export class CadastroComponent {
   constructor(
     private formularioService: FormularioService,
     private cadastroService: CadastroService,
-    private router: Router
+    private router: Router,
   ) {}
 
   cadastrar() {

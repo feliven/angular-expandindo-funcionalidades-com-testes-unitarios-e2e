@@ -60,7 +60,7 @@ describe('PassagemComponent', () => {
   it('should display passagem data correctly', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.ida-volta').textContent.trim()).toBe(
-      'Ida e volta'
+      'Ida e volta',
     );
   });
 });

@@ -5,18 +5,17 @@ import { RadioOption } from '../core/types/type';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-pagamento',
-    templateUrl: './pagamento.component.html',
-    styleUrls: ['./pagamento.component.scss'],
-    standalone: false
+  selector: 'app-pagamento',
+  templateUrl: './pagamento.component.html',
+  styleUrls: ['./pagamento.component.scss'],
+  standalone: false,
 })
 export class PagamentoComponent implements OnInit {
-
   qrCode$ = this.pagamentoService.getQrCode();
 
   constructor(
     private router: Router,
-    private pagamentoService: PagamentoService
+    private pagamentoService: PagamentoService,
   ) {}
 
   pagamentoRadioOptions: RadioOption[] = [
@@ -26,8 +25,8 @@ export class PagamentoComponent implements OnInit {
       label: 'Pix',
       img: {
         src: '../../assets/icones/pix-icon.svg',
-        alt: 'Pix logo'
-      }
+        alt: 'Pix logo',
+      },
     },
     {
       id: '2',
@@ -35,9 +34,9 @@ export class PagamentoComponent implements OnInit {
       label: 'Cartão',
       img: {
         src: '../../assets/icones/mastercard-icon.svg',
-        alt: 'Card logo'
-      }
-    }
+        alt: 'Card logo',
+      },
+    },
   ];
 
   formaPagamento!: RadioOption;
@@ -47,7 +46,7 @@ export class PagamentoComponent implements OnInit {
     nomeCartao: new FormControl('', Validators.required),
     mesValidade: new FormControl('', Validators.required),
     anoValidade: new FormControl('', Validators.required),
-    codigoSeguranca: new FormControl('', Validators.required)
+    codigoSeguranca: new FormControl('', Validators.required),
   });
 
   ngOnInit(): void {
@@ -59,9 +58,8 @@ export class PagamentoComponent implements OnInit {
   }
 
   onSubmitForm(): void {
-    this.pagamentoService.criarReserva()
-      .subscribe(() => {
-        this.router.navigate(['conclusao-reserva']);
-      });
+    this.pagamentoService.criarReserva().subscribe(() => {
+      this.router.navigate(['conclusao-reserva']);
+    });
   }
 }

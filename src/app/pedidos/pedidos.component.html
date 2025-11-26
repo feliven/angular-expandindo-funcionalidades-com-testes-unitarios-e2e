@@ -1,6 +1,4 @@
-<app-banner
-  src="assets/imagens/banner-conclusão.png"
-  alt="Banner pedidos">
+<app-banner src="assets/imagens/banner-conclusão.png" alt="Banner pedidos">
 </app-banner>
 
 <app-container>
@@ -8,13 +6,21 @@
     <header class="header">
       <h1 class="title">Meus pedidos</h1>
       <nav class="nav-link">
-        <img src="../../assets/icones/back-icon.svg" alt="Home icon" class="icon" />
+        <img
+          src="../../assets/icones/back-icon.svg"
+          alt="Home icon"
+          class="icon"
+        />
         <a href="/" class="link-text">Voltar para home</a>
       </nav>
     </header>
     <section class="order-container">
       <article *ngFor="let pedido of pedidos$ | async" class="order-card">
-        <img src="../../assets/imagens/desert.png" alt="Desert in Chile" class="order-image" />
+        <img
+          src="../../assets/imagens/desert.png"
+          alt="Desert in Chile"
+          class="order-image"
+        />
         <div class="order-details">
           <div class="order-info">
             <h2 class="order-title">Atravesse o deserto no Chile</h2>
@@ -32,8 +38,15 @@
           </div>
         </div>
         <div class="order-actions">
-          <button routerLink="/reserva" class="btn btn-outline">Editar reserva</button>
-          <button class="btn btn-secondary" (click)="onCancelarPedido(pedido?.id)">Cancelar reserva</button>
+          <button routerLink="/reserva" class="btn btn-outline">
+            Editar reserva
+          </button>
+          <button
+            class="btn btn-secondary"
+            (click)="onCancelarPedido(pedido?.id)"
+          >
+            Cancelar reserva
+          </button>
         </div>
       </article>
     </section>

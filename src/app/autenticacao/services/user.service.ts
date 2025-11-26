@@ -5,14 +5,13 @@ import { BehaviorSubject } from 'rxjs';
 import { PessoaUsuaria } from '../../core/types/type';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
   private userSubject = new BehaviorSubject<PessoaUsuaria | null>(null);
 
   constructor(private tokenService: TokenService) {
-    if(this.tokenService.possuiToken()) {
+    if (this.tokenService.possuiToken()) {
       this.decodificarJWT();
     }
   }
@@ -41,6 +40,3 @@ export class UserService {
     return this.tokenService.possuiToken();
   }
 }
-
-
-

@@ -13,7 +13,7 @@ import { PromocaoService } from '../home/services/promocao.service';
 export class HomeComponent implements OnInit {
   constructor(
     private servicoPromocao: PromocaoService,
-    private router: Router
+    private router: Router,
   ) {}
   ngOnInit(): void {
     this.servicoPromocao.listar().subscribe((resposta) => {

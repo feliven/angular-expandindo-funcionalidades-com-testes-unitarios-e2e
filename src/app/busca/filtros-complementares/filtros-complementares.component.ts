@@ -12,7 +12,7 @@ export class FiltrosComplementaresComponent {
   @Output() realizarBusca = new EventEmitter();
   constructor(
     public formBuscaService: FormBuscaService,
-    private passagemService: PassagensService
+    private passagemService: PassagensService,
   ) {}
 
   busca() {

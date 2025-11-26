@@ -41,14 +41,14 @@ describe('PaginaNaoEncontradaComponent', () => {
 
   it('deveria carregar app-banner 2 vezes', () => {
     const banners: DebugElement[] = fixture.debugElement.queryAll(
-      By.css('app-banner')
+      By.css('app-banner'),
     );
     expect(banners.length).toBe(2);
   });
 
   it('deveria carregar app-container 1 vez', () => {
     const container: DebugElement = fixture.debugElement.query(
-      By.css('app-container')
+      By.css('app-container'),
     );
     expect(container).toBeTruthy();
   });
@@ -61,7 +61,7 @@ describe('PaginaNaoEncontradaComponent', () => {
   it('should load paragraph with text Página não encontrada', () => {
     const paragrafo: DebugElement = fixture.debugElement.query(By.css('p'));
     expect(paragrafo.nativeElement.textContent).toContain(
-      'Página não encontrada'
+      'Página não encontrada',
     );
   });
 

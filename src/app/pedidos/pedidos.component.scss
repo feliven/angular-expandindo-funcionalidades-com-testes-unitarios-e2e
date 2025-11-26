@@ -15,7 +15,9 @@ $order-on-secondary-container-color: #1d192b;
 
     .title {
       color: $order-primary-color;
-      font: 400 36px/122% Roboto, sans-serif;
+      font:
+        400 36px/122% Roboto,
+        sans-serif;
     }
 
     .nav-link {
@@ -30,7 +32,9 @@ $order-on-secondary-container-color: #1d192b;
 
       .link-text {
         color: $order-primary-color;
-        font: 500 16px/150% Roboto, sans-serif;
+        font:
+          500 16px/150% Roboto,
+          sans-serif;
         text-decoration: none;
       }
     }
@@ -63,12 +67,16 @@ $order-on-secondary-container-color: #1d192b;
           .order-dates,
           .order-guests {
             color: $order-text-color;
-            font: 16px/24px Roboto, sans-serif;
+            font:
+              16px/24px Roboto,
+              sans-serif;
             margin-bottom: 16px;
           }
 
           .order-title {
-            font: 22px/28px Roboto, sans-serif;
+            font:
+              22px/28px Roboto,
+              sans-serif;
           }
         }
 
@@ -78,12 +86,16 @@ $order-on-secondary-container-color: #1d192b;
 
           .price-label {
             color: $order-primary-color;
-            font: 24px/133% Roboto, sans-serif;
+            font:
+              24px/133% Roboto,
+              sans-serif;
             margin-bottom: 8px;
           }
 
           .price-value {
-            font: 32px Roboto, sans-serif;
+            font:
+              32px Roboto,
+              sans-serif;
           }
         }
       }
@@ -95,7 +107,9 @@ $order-on-secondary-container-color: #1d192b;
 
         .btn {
           border-radius: 100px;
-          font: 500 14px/143% Roboto, sans-serif;
+          font:
+            500 14px/143% Roboto,
+            sans-serif;
           padding: 10px 24px;
           text-align: center;
           cursor: pointer;

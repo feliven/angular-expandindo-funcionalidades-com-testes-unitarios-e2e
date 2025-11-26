@@ -1,4 +1,8 @@
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,34 +24,38 @@ import { PagamentoModule } from './pagamento/pagamento.module';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { ConclusaoReservaModule } from './conclusao-reserva/conclusao-reserva.module';
 
-@NgModule({ declarations: [
-        AppComponent
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        AppRoutingModule,
-        SharedModule,
-        MaterialModule,
-        HomeModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        ErroModule,
-        AutenticacaoModule,
-        BuscaModule,
-        DetalheModule,
-        ReservaModule,
-        PagamentoModule,
-        PedidosModule,
-        ConclusaoReservaModule], providers: [
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: AutenticacaoInterceptor,
-            multi: true
-        },
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: ErrosInterceptor,
-            multi: true
-        },
-        provideHttpClient(withInterceptorsFromDi()),
-    ] })
-export class AppModule { }
+@NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    MaterialModule,
+    HomeModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ErroModule,
+    AutenticacaoModule,
+    BuscaModule,
+    DetalheModule,
+    ReservaModule,
+    PagamentoModule,
+    PedidosModule,
+    ConclusaoReservaModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AutenticacaoInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrosInterceptor,
+      multi: true,
+    },
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
+})
+export class AppModule {}

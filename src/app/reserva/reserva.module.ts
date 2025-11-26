@@ -4,16 +4,8 @@ import { ReservaComponent } from './reserva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 
-
-
 @NgModule({
-  declarations: [
-    ReservaComponent
-  ],
-  imports: [
-    ReactiveFormsModule,
-    SharedModule,
-    CommonModule
-  ]
+  declarations: [ReservaComponent],
+  imports: [ReactiveFormsModule, SharedModule, CommonModule],
 })
-export class ReservaModule { }
+export class ReservaModule {}

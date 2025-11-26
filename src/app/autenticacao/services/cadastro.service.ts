@@ -14,7 +14,7 @@ export class CadastroService {
   cadastrar(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
     return this.http.post<PessoaUsuaria>(
       `${this.apiUrl}/auth/cadastro`,
-      pessoaUsuaria
+      pessoaUsuaria,
     );
   }
 
@@ -25,7 +25,7 @@ export class CadastroService {
   editarCadastro(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
     return this.http.patch<PessoaUsuaria>(
       `${this.apiUrl}/auth/perfil`,
-      pessoaUsuaria
+      pessoaUsuaria,
     );
   }
 }

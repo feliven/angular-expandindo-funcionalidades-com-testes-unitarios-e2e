@@ -6,12 +6,12 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
 const routes: Routes = [
   {
     path: 'pagina-nao-encontrada',
-    component: PaginaNaoEncontradaComponent
-  }
+    component: PaginaNaoEncontradaComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ErroRoutingModule { }
+export class ErroRoutingModule {}

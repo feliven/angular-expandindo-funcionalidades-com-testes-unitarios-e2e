@@ -16,7 +16,7 @@ export class PedidosService {
 
   removerPedido(id: number): Observable<Reserva[]> {
     return this.httpClient.delete<Reserva[]>(
-      `${this.apiUrl}/reserva/pedidos/${id}`
+      `${this.apiUrl}/reserva/pedidos/${id}`,
     );
   }
 }

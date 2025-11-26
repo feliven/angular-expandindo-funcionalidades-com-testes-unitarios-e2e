@@ -29,7 +29,7 @@ export class DropdownUfComponent implements OnInit {
     });
     this.filteredOptions$ = this.control.valueChanges.pipe(
       startWith(''),
-      map((value) => this.filtrarUfs(value))
+      map((value) => this.filtrarUfs(value)),
     );
   }
 
@@ -37,7 +37,7 @@ export class DropdownUfComponent implements OnInit {
     const nomeUf = typeof value === 'string' ? value : value?.nome;
     const valorFiltrado = nomeUf?.toLowerCase();
     const result = this.unidadesFederativas.filter((estado) =>
-      estado.nome.toLowerCase().includes(valorFiltrado)
+      estado.nome.toLowerCase().includes(valorFiltrado),
     );
     return result;
   }

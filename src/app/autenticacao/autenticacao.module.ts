@@ -10,22 +10,14 @@ import { MaterialModule } from '../core/material/material.module';
 import { AutenticacaoRoutingModule } from './autenticacao-routing.module';
 
 @NgModule({
-  declarations: [
-    CadastroComponent,
-    LoginComponent,
-    PerfilComponent
-  ],
+  declarations: [CadastroComponent, LoginComponent, PerfilComponent],
   imports: [
     CommonModule,
     SharedModule,
     MaterialModule,
     ReactiveFormsModule,
-    AutenticacaoRoutingModule
+    AutenticacaoRoutingModule,
   ],
-  exports: [
-    CadastroComponent,
-    LoginComponent,
-    PerfilComponent
-  ]
+  exports: [CadastroComponent, LoginComponent, PerfilComponent],
 })
-export class AutenticacaoModule { }
+export class AutenticacaoModule {}

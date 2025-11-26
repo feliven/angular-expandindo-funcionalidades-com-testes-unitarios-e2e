@@ -21,7 +21,9 @@ $modal-footer-color: var(--M3-sys-light-primary, #6750a4);
 
     .modal-title {
       color: $modal-title-color;
-      font: 24px/133% Roboto, sans-serif;
+      font:
+        24px/133% Roboto,
+        sans-serif;
       margin: 0;
     }
 
@@ -29,7 +31,9 @@ $modal-footer-color: var(--M3-sys-light-primary, #6750a4);
       color: $modal-description-color;
       letter-spacing: 0.25px;
       margin-top: 16px;
-      font: 14px/20px Roboto, sans-serif;
+      font:
+        14px/20px Roboto,
+        sans-serif;
     }
   }
 

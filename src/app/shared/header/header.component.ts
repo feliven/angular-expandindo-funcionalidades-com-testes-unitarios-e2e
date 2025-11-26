@@ -12,7 +12,10 @@ export class HeaderComponent {
   showMenu = false;
   isMobile = false;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ) {
     this.checkIfMobile();
     window.onresize = () => this.checkIfMobile();
   }
