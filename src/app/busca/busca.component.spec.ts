@@ -36,6 +36,7 @@ import {
   MatSliderVisualThumb,
 } from '@angular/material/slider';
 import { MatInput } from '@angular/material/input';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 describe('BuscaComponent', () => {
   let component: BuscaComponent;
@@ -60,6 +61,7 @@ describe('BuscaComponent', () => {
         MatInput,
         MatSliderThumb,
         MatSliderRangeThumb,
+        MatCheckbox,
       ],
       declarations: [
         BuscaComponent,
