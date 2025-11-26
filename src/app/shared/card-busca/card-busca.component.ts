@@ -3,17 +3,15 @@ import { Router } from '@angular/router';
 import { Promocao } from 'src/app/core/types/type';
 
 @Component({
-    selector: 'app-card-busca',
-    templateUrl: './card-busca.component.html',
-    styleUrls: ['./card-busca.component.scss'],
-    standalone: false
+  selector: 'app-card-busca',
+  templateUrl: './card-busca.component.html',
+  styleUrls: ['./card-busca.component.scss'],
+  standalone: false,
 })
 export class CardBuscaComponent {
   @Input() promocao!: Promocao;
 
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   onDetalheClick(): void {
     this.router.navigate(['detalhe']);
