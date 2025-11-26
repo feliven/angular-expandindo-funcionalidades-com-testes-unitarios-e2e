@@ -11,6 +11,9 @@ class MockHeaderComponent {}
 @Component({ selector: 'app-footer', template: '', standalone: false })
 class MockFooterComponent {}
 
+@Component({ selector: 'router-outlet', template: '', standalone: false })
+class MockRouterOutlet {}
+
 @Component({ template: '<app-root></app-root>', standalone: false })
 class TestHostComponent {}
 
@@ -21,8 +24,13 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [],
-      declarations: [AppComponent, MockHeaderComponent, MockFooterComponent],
-      providers: [provideHttpClient()],
+      declarations: [
+        AppComponent,
+        MockHeaderComponent,
+        MockFooterComponent,
+        MockRouterOutlet,
+      ],
+      providers: [provideHttpClient(), provideRouter([])],
     });
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
@@ -63,8 +71,9 @@ describe('AppComponent', () => {
         AppComponent,
         MockHeaderComponent,
         MockFooterComponent,
+        MockRouterOutlet,
       ],
-      providers: [provideHttpClient()],
+      providers: [provideHttpClient(), provideRouter([])],
     });
     const hostFixture = TestBed.createComponent(TestHostComponent);
     hostFixture.detectChanges();
