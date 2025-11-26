@@ -28,6 +28,9 @@ describe('FormBuscaComponent', () => {
   let fixture: ComponentFixture<FormBuscaComponent>;
 
   beforeEach(() => {
+    // Prevent "Not implemented: window.alert" by mocking alert
+    (window as any).alert = jest.fn();
+
     TestBed.configureTestingModule({
       imports: [
         ReactiveFormsModule,
@@ -52,6 +55,11 @@ describe('FormBuscaComponent', () => {
     fixture = TestBed.createComponent(FormBuscaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    // clean up mocked alert
+    delete (window as any).alert;
   });
 
   it('should create', () => {
