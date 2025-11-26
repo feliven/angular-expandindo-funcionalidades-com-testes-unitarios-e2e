@@ -14,6 +14,7 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 describe('PedidosComponent', () => {
   let component: PedidosComponent;
@@ -46,7 +47,7 @@ describe('PedidosComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PedidosComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule,MatAutocomplete],
       providers: [
         PedidosService,
         MensagemService,

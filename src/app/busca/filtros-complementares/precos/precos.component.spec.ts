@@ -10,6 +10,7 @@ import {
   MatSliderThumb,
 } from '@angular/material/slider';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 describe('PrecosComponent', () => {
   let component: PrecosComponent;
@@ -22,6 +23,7 @@ describe('PrecosComponent', () => {
         MatSlider,
         MatSliderThumb,
         MatSliderRangeThumb,
+        MatAutocomplete,
       ],
       declarations: [PrecosComponent, LabelComponent],
       providers: [provideHttpClient()],
