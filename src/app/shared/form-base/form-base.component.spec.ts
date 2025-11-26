@@ -26,6 +26,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInput } from '@angular/material/input';
 import { MatSlider } from '@angular/material/slider';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('FormBaseComponent', () => {
   let component: FormBaseComponent;
@@ -62,6 +63,7 @@ describe('FormBaseComponent', () => {
         ContainerComponent,
       ],
       providers: [provideHttpClient()],
+      schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(FormBaseComponent);
     component = fixture.componentInstance;

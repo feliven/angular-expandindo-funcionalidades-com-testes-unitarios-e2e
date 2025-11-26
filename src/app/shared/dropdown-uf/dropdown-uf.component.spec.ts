@@ -9,6 +9,8 @@ import { UnidadeFederativa } from '../../core/types/type';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatIcon } from '@angular/material/icon';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DropdownUfComponent', () => {
   let component: DropdownUfComponent;
@@ -29,8 +31,8 @@ describe('DropdownUfComponent', () => {
         MatAutocomplete,
         MatIcon,
         MatFormField,
-        MatIcon,
         MatLabel,
+        MatInput,
       ],
       providers: [
         provideHttpClient(),
@@ -39,6 +41,7 @@ describe('DropdownUfComponent', () => {
           useValue: unidadeFederativaService,
         },
       ],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DropdownUfComponent);

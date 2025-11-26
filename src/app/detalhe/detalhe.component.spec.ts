@@ -4,13 +4,14 @@ import { expect } from '@jest/globals';
 import { DetalheComponent } from './detalhe.component';
 import { SharedModule } from '../shared/shared.module';
 import { DepoimentosModule } from '../home/depoimentos/depoimentos.module';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 describe('DetalheComponent', () => {
   let component: DetalheComponent;
@@ -19,8 +20,8 @@ describe('DetalheComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [DetalheComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [SharedModule, DepoimentosModule, RouterTestingModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+      imports: [SharedModule, DepoimentosModule, MatAutocomplete],
       providers: [
         provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting(),

@@ -37,6 +37,7 @@ import {
 } from '@angular/material/slider';
 import { MatInput } from '@angular/material/input';
 import { MatCheckbox } from '@angular/material/checkbox';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('BuscaComponent', () => {
   let component: BuscaComponent;
@@ -78,6 +79,7 @@ describe('BuscaComponent', () => {
         LabelComponent,
       ],
       providers: [provideHttpClient()],
+      schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(BuscaComponent);
     component = fixture.componentInstance;

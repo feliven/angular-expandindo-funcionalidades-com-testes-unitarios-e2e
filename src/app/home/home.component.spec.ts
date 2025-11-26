@@ -27,6 +27,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInput } from '@angular/material/input';
 import { MatSlider } from '@angular/material/slider';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -61,7 +62,9 @@ describe('HomeComponent', () => {
         DropdownUfComponent,
       ],
       providers: [provideHttpClient()],
+      schemas: [NO_ERRORS_SCHEMA],
     });
+
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

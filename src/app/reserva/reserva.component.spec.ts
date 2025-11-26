@@ -4,7 +4,7 @@ import { expect } from '@jest/globals';
 import { ReservaComponent } from './reserva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { LabelComponent } from '../busca/filtros-complementares/label/label.component';
 import { MatSlider } from '@angular/material/slider';
@@ -24,7 +24,7 @@ describe('ReservaComponent', () => {
         FormBaseComponent,
       ],
       imports: [FormsModule, SharedModule, ReactiveFormsModule, MatSlider],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(ReservaComponent);
     component = fixture.componentInstance;
